@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | A.P ASOCIADOS C.A</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/logo-ap-asociados.jpg" alt="Logo A.P ASOCIADOS C.A" class="logo-image">
+                    <div class="logo-text-wrap">
+                        <span class="logo-text">A.P ASOCIADOS C.A</span>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="chesterton.html" class="nav-link">Chesterton</a></li>
+                    <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+                </ul>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="contact-hero">
+        <div class="section-header">
+            <h2>Hablemos de tu proyecto</h2>
+            <div class="header-line"></div>
+        </div>
+        <p class="contact-lead">Comparte tus requerimientos y nuestro equipo se pondrá en contacto para coordinar la mejor solución.</p>
+    </section>
+
+    <section class="contact-content">
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Información de la empresa</h3>
+                <p>A.P ASOCIADOS C.A ofrece soluciones integrales en fabricación, montaje y mantenimiento industrial, con enfoque en seguridad, productividad y confiabilidad operativa.</p>
+                <ul class="contact-list">
+                    <li><strong>Horario:</strong> Lunes a Viernes, 8:00 - 17:00</li>
+                    <li><strong>Ubicación:</strong> Puerto La Cruz, Venezuela</li>
+                    <li><strong>Teléfono:</strong> +58 (XXX) XXX-XXXX</li>
+                    <li><strong>Correo:</strong> info@ap-asociados.com</li>
+                </ul>
+            </div>
+            <div class="contact-card">
+                <h3>¿Qué podemos hacer por ti?</h3>
+                <p>Desde proyectos metalmecánicos hasta soluciones de mantenimiento especializado, trabajamos a la medida de tu operación para maximizar resultados.</p>
+                <ul class="contact-list">
+                    <li>Diseño y fabricación de estructuras</li>
+                    <li>Mantenimiento industrial y reparaciones</li>
+                    <li>Representaciones y suministros</li>
+                    <li>Soporte técnico y asesoría</li>
+                </ul>
+            </div>
+        </div>
+
+        <form class="contact-form" action="mailto:info@ap-asociados.com" method="post" enctype="text/plain">
+            <h3>Enviar un correo</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nombre">Nombre y apellido</label>
+                    <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" name="Correo" placeholder="tu@correo.com" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="Telefono" placeholder="+58 000 0000000">
+                </div>
+                <div class="form-group">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa" name="Empresa" placeholder="Nombre de la empresa">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="Mensaje" rows="6" placeholder="Cuéntanos sobre tu necesidad" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Enviar mensaje</button>
+            <p class="form-note">El envío se realiza a través de tu cliente de correo predeterminado.</p>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 A.P ASOCIADOS C.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="web.js"></script>
+</body>
+</html>

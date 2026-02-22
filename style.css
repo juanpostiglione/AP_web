@@ -69,6 +69,11 @@ body {
     background-color: rgba(0, 0, 0, 0.85);
 }
 
+.home-page .header,
+.home-page .header.is-scrolled {
+    background-color: #000000;
+}
+
 .header.is-hidden {
     transform: translateY(-100%);
     opacity: 0;
@@ -844,6 +849,12 @@ body {
     height: 200px;
     object-fit: cover;
     background: #111111;
+}
+
+.product-image.product-image--detail {
+    height: min(78vh, 920px);
+    object-fit: contain;
+    background: #ffffff;
 }
 
 .service-card:hover .service-link {

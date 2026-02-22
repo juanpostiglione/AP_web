@@ -4,6 +4,9 @@
 
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('section[id]');
+const header = document.querySelector('.header');
+const isHomePage = document.body.classList.contains('home-page');
+let lastScrollY = window.scrollY;
 
 // Update active nav link on scroll
 window.addEventListener('scroll', () => {
@@ -24,6 +27,25 @@ window.addEventListener('scroll', () => {
             link.classList.add('active');
         }
     });
+
+    if (header && isHomePage) {
+        const currentY = window.scrollY;
+        const isScrollingDown = currentY > lastScrollY;
+
+        if (currentY > 20) {
+            header.classList.add('is-scrolled');
+        } else {
+            header.classList.remove('is-scrolled');
+        }
+
+        if (currentY > 120 && isScrollingDown) {
+            header.classList.add('is-hidden');
+        } else {
+            header.classList.remove('is-hidden');
+        }
+
+        lastScrollY = Math.max(currentY, 0);
+    }
 });
 
 // ========================
@@ -186,15 +208,25 @@ if (productCards.length) {
 
 const productScrollGrids = document.querySelectorAll('.product-grid--scroll');
 
-productScrollGrids.forEach(grid => {
+const toggleScrollHint = (grid) => {
+    const hasOverflow = grid.scrollWidth > grid.clientWidth + 4;
     const previous = grid.previousElementSibling;
-    if (!previous || !previous.classList.contains('scroll-hint')) {
+    const existingHint = previous && previous.classList.contains('scroll-hint') ? previous : null;
+
+    if (hasOverflow && !existingHint) {
         const hint = document.createElement('div');
         hint.className = 'scroll-hint';
         hint.textContent = 'Desliza hacia la derecha para ver más';
         grid.parentNode.insertBefore(hint, grid);
     }
-});
+
+    if (!hasOverflow && existingHint) {
+        existingHint.remove();
+    }
+};
+
+productScrollGrids.forEach(toggleScrollHint);
+window.addEventListener('resize', () => productScrollGrids.forEach(toggleScrollHint));
 
 // ========================
 // SCROLL PROGRESS BAR

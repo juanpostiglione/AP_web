@@ -96,6 +96,7 @@ const observer = new IntersectionObserver(entries => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('is-visible');
         }
     });
 }, observerOptions);
@@ -105,6 +106,12 @@ document.querySelectorAll('.service-card, .project-card').forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(20px)';
     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+});
+
+// Observe rep-product-cards with staggered delay
+document.querySelectorAll('.rep-product-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.08}s`;
     observer.observe(card);
 });
 
@@ -281,16 +288,32 @@ const animateCounter = (element, target, duration = 2000) => {
 const statsSection = document.querySelector('.stats');
 let statsAnimated = false;
 
+const animateStatNumber = (element, target, suffix, duration = 2000) => {
+    let start = 0;
+    const increment = target / (duration / 16);
+    const updateNum = () => {
+        start += increment;
+        if (start < target) {
+            element.textContent = Math.floor(start) + suffix;
+            requestAnimationFrame(updateNum);
+        } else {
+            element.textContent = target + suffix;
+        }
+    };
+    updateNum();
+};
+
 const statsObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting && !statsAnimated) {
             statsAnimated = true;
-            const statNumbers = document.querySelectorAll('.stat h3');
-            statNumbers.forEach(stat => {
-                const text = stat.textContent;
+            const statNumbers = document.querySelectorAll('.stat__number');
+            statNumbers.forEach(el => {
+                const text = el.textContent.trim();
                 const number = parseInt(text);
+                const suffix = text.replace(/[0-9]/g, '');
                 if (!isNaN(number)) {
-                    animateCounter(stat, number);
+                    animateStatNumber(el, number, suffix);
                 }
             });
         }
@@ -352,15 +375,21 @@ window.addEventListener('resize', () => {
 console.log('A.P ASOCIADOS C.A Website Loaded Successfully');
 
 // ========================
-// HERO BACKGROUND SLIDESHOW
+// HERO BACKGROUND SLIDESHOW & REVEAL
 // ========================
 
 const initHeroSlideshow = () => {
     const images = document.querySelectorAll('.hero-bg-image');
+    const slogan = document.querySelector('.hero-slogan-center');
     if (!images.length) return;
 
     let currentIndex = 0;
     const interval = 7000;
+
+    // Delayed dramatic reveal — image first, then text fades in
+    setTimeout(() => {
+        if (slogan) slogan.classList.add('is-revealed');
+    }, 700);
 
     setInterval(() => {
         images[currentIndex].classList.remove('active');

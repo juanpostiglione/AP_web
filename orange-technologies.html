@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orange Technologies | Representaciones A.P ASOCIADOS C.A</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
     <header class="header">
@@ -18,9 +18,7 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html#home" class="nav-link">Inicio</a></li>
-                    <li><a href="index.html#about" class="nav-link">Nosotros</a></li>
                     <li><a href="index.html#services" class="nav-link active">Representaciones</a></li>
-                    <li><a href="index.html#projects" class="nav-link">Proyectos</a></li>
                     <li><a href="contacto.html" class="nav-link">Contacto</a></li>
                 </ul>
                 <div class="nav-toggle" id="navToggle">
@@ -32,44 +30,60 @@
         </nav>
     </header>
 
-    <section class="story" style="padding-top: 8rem;">
-        <div class="section-header">
-            <h2>Orange Technologies</h2>
+    <section class="rep-hero rep-hero--orange">
+        <div class="rep-hero__overlay"></div>
+        <div class="rep-hero__content">
+            <img src="images/orange-technologies.png" alt="Orange Technologies" class="rep-hero__logo">
+            <h1 class="rep-hero__title">Orange Technologies</h1>
+            <p class="rep-hero__subtitle">Soluciones de recubrimiento, aislamiento térmico y protección anticorrosiva para equipos industriales</p>
+        </div>
+    </section>
+
+    <section class="rep-products">
+        <div class="rep-products__header">
+            <h2>Líneas de Producto</h2>
             <div class="header-line"></div>
         </div>
-
-        <div class="story-panels" style="gap: 2.5rem;">
-            <article class="story-panel is-visible single-column" style="min-height: auto;">
-                <div class="story-panel-content wide" style="opacity: 1; transform: none;">
-                    <p style="margin-bottom: 1.5em;">Orange Technologies ofrece soluciones de recubrimiento y aislamiento térmico para equipos industriales, enfocadas en seguridad operativa, ahorro energético y protección de activos.</p>
+        <div class="rep-products__grid">
+            <a class="rep-product-card" href="orange-soluciones.html">
+                <div class="rep-product-card__accent"></div>
+                <div class="rep-product-card__body">
+                    <h3>Las soluciones que proporcionamos</h3>
+                    <p>Resumen completo de líneas Orange: recubrimientos, reparación de bandas, juntas, PTFE expandido y abrazaderas.</p>
                 </div>
-            </article>
-        </div>
-
-        <div class="services-grid">
-            <a class="service-card" href="orange-soluciones.html">
-                <h3>Las soluciones que proporcionamos</h3>
-                <p>Resumen completo de líneas Orange: recubrimientos, reparación de bandas, juntas, PTFE expandido y abrazaderas de tubería.</p>
+                <span class="rep-product-card__arrow">→</span>
             </a>
-
-            <a class="service-card" href="orange-u-coat-301.html">
-                <h3>U-COAT 301</h3>
-                <p>Revestimiento térmico de fácil aplicación para tuberías, tanques, maquinaria y superficies en planta.</p>
+            <a class="rep-product-card" href="orange-u-coat-301.html">
+                <div class="rep-product-card__accent"></div>
+                <div class="rep-product-card__body">
+                    <h3>U-COAT 301</h3>
+                    <p>Revestimiento térmico de fácil aplicación para tuberías, tanques, maquinaria y superficies en planta.</p>
+                </div>
+                <span class="rep-product-card__arrow">→</span>
             </a>
-
-            <a class="service-card" href="orange-nrx.html">
-                <h3>NRX NanoPrime</h3>
-                <p>Sistema nanotecnológico convertidor de óxido, de baja preparación superficial y alta protección anticorrosiva.</p>
+            <a class="rep-product-card" href="orange-nrx.html">
+                <div class="rep-product-card__accent"></div>
+                <div class="rep-product-card__body">
+                    <h3>NRX NanoPrime</h3>
+                    <p>Sistema nanotecnológico convertidor de óxido, de baja preparación superficial y alta protección anticorrosiva.</p>
+                </div>
+                <span class="rep-product-card__arrow">→</span>
             </a>
-
-            <a class="service-card" href="orange-rubbafix-r.html">
-                <h3>RubbaFIX R</h3>
-                <p>Compuesto de reparación para bandas transportadoras y superficies de caucho, con curado rápido.</p>
+            <a class="rep-product-card" href="orange-rubbafix-r.html">
+                <div class="rep-product-card__accent"></div>
+                <div class="rep-product-card__body">
+                    <h3>RubbaFIX R</h3>
+                    <p>Compuesto de reparación para bandas transportadoras y superficies de caucho, con curado rápido.</p>
+                </div>
+                <span class="rep-product-card__arrow">→</span>
             </a>
-
-            <a class="service-card" href="orange-pipe-clamps.html">
-                <h3>Pipe Clamps</h3>
-                <p>Abrazaderas para reparación rápida de tuberías con opción estándar y configuración PTFE.</p>
+            <a class="rep-product-card" href="orange-pipe-clamps.html">
+                <div class="rep-product-card__accent"></div>
+                <div class="rep-product-card__body">
+                    <h3>Pipe Clamps</h3>
+                    <p>Abrazaderas para reparación rápida de tuberías con opción estándar y configuración PTFE.</p>
+                </div>
+                <span class="rep-product-card__arrow">→</span>
             </a>
         </div>
     </section>

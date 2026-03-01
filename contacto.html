@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | A.P ASOCIADOS C.A</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
     <header class="header">
@@ -30,66 +30,101 @@
         </nav>
     </header>
 
+    <!-- Contact Hero -->
     <section class="contact-hero">
-        <div class="section-header">
-            <h2>Hablemos de tu proyecto</h2>
+        <div class="contact-hero__inner">
+            <span class="section-kicker">Contacto</span>
+            <h1 class="contact-hero__title">Contáctanos</h1>
             <div class="header-line"></div>
+            <p class="contact-lead">Comparte tus requerimientos y nuestro equipo se pondrá en contacto para coordinar la mejor solución.</p>
         </div>
-        <p class="contact-lead">Comparte tus requerimientos y nuestro equipo se pondrá en contacto para coordinar la mejor solución.</p>
     </section>
 
+    <!-- Contact Info Cards -->
     <section class="contact-content">
         <div class="contact-grid">
             <div class="contact-card">
-                <h3>Información de la empresa</h3>
-                <p>A.P ASOCIADOS C.A ofrece soluciones integrales en fabricación, montaje y mantenimiento industrial, con enfoque en seguridad, productividad y confiabilidad operativa.</p>
-                <ul class="contact-list">
-                    <li><strong>Horario:</strong> Lunes a Viernes, 8:00 - 17:00</li>
-                    <li><strong>Ubicación:</strong> Puerto La Cruz, Venezuela</li>
-                    <li><strong>Teléfono:</strong> +58 (XXX) XXX-XXXX</li>
-                    <li><strong>Correo:</strong> info@ap-asociados.com</li>
-                </ul>
+                <div class="contact-card__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <h3>Ubicación</h3>
+                <p>Puerto Ordaz, Estado Bolívar<br>Venezuela</p>
             </div>
             <div class="contact-card">
-                <h3>¿Qué podemos hacer por ti?</h3>
-                <p>Desde proyectos metalmecánicos hasta soluciones de mantenimiento especializado, trabajamos a la medida de tu operación para maximizar resultados.</p>
-                <ul class="contact-list">
-                    <li>Diseño y fabricación de estructuras</li>
-                    <li>Mantenimiento industrial y reparaciones</li>
-                    <li>Representaciones y suministros</li>
-                    <li>Soporte técnico y asesoría</li>
-                </ul>
+                <div class="contact-card__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <h3>Horario</h3>
+                <p>Lunes a Viernes<br>8:00 AM — 5:00 PM</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-card__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <h3>Correo</h3>
+                <p>
+                    <a href="mailto:salatecnica@apasociados.com" class="contact-card__link">salatecnica@apasociados.com</a><br>
+                    <a href="mailto:jhpostiglione@apasociados.com" class="contact-card__link">jhpostiglione@apasociados.com</a><br>
+                    <a href="mailto:gtegeneral@apasociados.com" class="contact-card__link">gtegeneral@apasociados.com</a>
+                </p>
             </div>
         </div>
 
-        <form class="contact-form" action="mailto:info@ap-asociados.com" method="post" enctype="text/plain">
-            <h3>Enviar un correo</h3>
+        <!-- Services summary -->
+        <div class="contact-services">
+            <h3>¿Qué podemos hacer por ti?</h3>
+            <div class="contact-services__grid">
+                <div class="contact-services__item">
+                    <span class="contact-services__accent"></span>
+                    <span>Diseño y fabricación de estructuras</span>
+                </div>
+                <div class="contact-services__item">
+                    <span class="contact-services__accent"></span>
+                    <span>Mantenimiento industrial y reparaciones</span>
+                </div>
+                <div class="contact-services__item">
+                    <span class="contact-services__accent"></span>
+                    <span>Representaciones y suministros</span>
+                </div>
+                <div class="contact-services__item">
+                    <span class="contact-services__accent"></span>
+                    <span>Soporte técnico y asesoría</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form (Formspree) -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xyzgobkj" method="POST">
+            <h3>Envíanos un mensaje</h3>
+            <p class="contact-form__subtitle">Completa el formulario y te responderemos a la brevedad.</p>
             <div class="form-row">
                 <div class="form-group">
                     <label for="nombre">Nombre y apellido</label>
-                    <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre" required>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
                 </div>
                 <div class="form-group">
                     <label for="correo">Correo electrónico</label>
-                    <input type="email" id="correo" name="Correo" placeholder="tu@correo.com" required>
+                    <input type="email" id="correo" name="email" placeholder="tu@correo.com" required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label for="telefono">Teléfono</label>
-                    <input type="tel" id="telefono" name="Telefono" placeholder="+58 000 0000000">
+                    <input type="tel" id="telefono" name="telefono" placeholder="+58 0000 0000000">
                 </div>
                 <div class="form-group">
                     <label for="empresa">Empresa</label>
-                    <input type="text" id="empresa" name="Empresa" placeholder="Nombre de la empresa">
+                    <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa">
                 </div>
             </div>
             <div class="form-group">
                 <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="Mensaje" rows="6" placeholder="Cuéntanos sobre tu necesidad" required></textarea>
+                <textarea id="mensaje" name="mensaje" rows="6" placeholder="Cuéntanos sobre tu necesidad" required></textarea>
             </div>
-            <button type="submit" class="cta-button">Enviar mensaje</button>
-            <p class="form-note">El envío se realiza a través de tu cliente de correo predeterminado.</p>
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde AP Asociados Web">
+            <input type="hidden" name="_next" value="contacto.html?sent=true">
+            <button type="submit" class="cta-button" id="submitBtn">Enviar mensaje</button>
+            <p class="form-note" id="formNote">Tu mensaje será enviado directamente a nuestro equipo.</p>
         </form>
     </section>
 
@@ -100,5 +135,19 @@
     </footer>
 
     <script src="web.js"></script>
+    <script>
+        // Show success message if redirected after form submission
+        if (window.location.search.includes('sent=true')) {
+            const note = document.getElementById('formNote');
+            const form = document.getElementById('contactForm');
+            if (note) {
+                note.textContent = '✓ Mensaje enviado correctamente. Te responderemos a la brevedad.';
+                note.classList.add('form-note--success');
+            }
+            if (form) form.reset();
+            // Clean URL
+            window.history.replaceState({}, '', 'contacto.html');
+        }
+    </script>
 </body>
 </html>

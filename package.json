@@ -1,0 +1,31 @@
+{
+  "name": "ap_web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "web.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./tailwind.input.css -o ./tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./tailwind.input.css -o ./tailwind.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanpostiglione/AP_web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/juanpostiglione/AP_web/issues"
+  },
+  "homepage": "https://github.com/juanpostiglione/AP_web#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0"
+  }
+}

@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | A.P ASOCIADOS C.A</title>
-    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="tailwind.css?v=2">
+    <link rel="stylesheet" href="style.css?v=10">
 </head>
-<body>
-    <header class="header">
+<body class="site-shell">
+<header class="header">
         <nav class="navbar">
-            <div class="nav-container">
+            <div class="nav-container tw-industrial-shell">
                 <div class="logo">
                     <img src="images/logo-ap-asociados.jpg" alt="Logo A.P ASOCIADOS C.A" class="logo-image">
                     <div class="logo-text-wrap">
@@ -18,7 +19,8 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="chesterton.html" class="nav-link">Chesterton</a></li>
+                    <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="index.html#services" class="nav-link">Representaciones</a></li>
                     <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
                 </ul>
                 <div class="nav-toggle" id="navToggle">
@@ -93,36 +95,28 @@
             </div>
         </div>
 
-        <!-- Contact Form (Formspree) -->
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xyzgobkj" method="POST">
+        <!-- Contact Form (FormSubmit) -->
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/jpostiglione80@gmail.com" method="POST">
             <h3>Envíanos un mensaje</h3>
             <p class="contact-form__subtitle">Completa el formulario y te responderemos a la brevedad.</p>
+            <input type="hidden" name="_subject" value="Nuevo mensaje - A.P Asociados Web">
+            <input type="hidden" name="_next" value="https://juanpostiglione.github.io/AP_web/contacto.html?sent=true">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none">
             <div class="form-row">
                 <div class="form-group">
                     <label for="nombre">Nombre y apellido</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre" required>
                 </div>
                 <div class="form-group">
                     <label for="correo">Correo electrónico</label>
-                    <input type="email" id="correo" name="email" placeholder="tu@correo.com" required>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="telefono">Teléfono</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="+58 0000 0000000">
-                </div>
-                <div class="form-group">
-                    <label for="empresa">Empresa</label>
-                    <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa">
+                    <input type="email" id="correo" name="Email" placeholder="tu@correo.com" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" rows="6" placeholder="Cuéntanos sobre tu necesidad" required></textarea>
+                <textarea id="mensaje" name="Mensaje" rows="6" placeholder="Cuéntanos sobre tu necesidad" required></textarea>
             </div>
-            <input type="hidden" name="_subject" value="Nuevo mensaje desde AP Asociados Web">
-            <input type="hidden" name="_next" value="contacto.html?sent=true">
             <button type="submit" class="cta-button" id="submitBtn">Enviar mensaje</button>
             <p class="form-note" id="formNote">Tu mensaje será enviado directamente a nuestro equipo.</p>
         </form>
@@ -134,6 +128,10 @@
         </div>
     </footer>
 
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
+
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/ScrollTrigger.min.js"></script>
     <script src="web.js"></script>
     <script>
         // Show success message if redirected after form submission
@@ -141,11 +139,10 @@
             const note = document.getElementById('formNote');
             const form = document.getElementById('contactForm');
             if (note) {
-                note.textContent = '✓ Mensaje enviado correctamente. Te responderemos a la brevedad.';
+                note.textContent = '\u2713 Mensaje enviado correctamente. Te responderemos a la brevedad.';
                 note.classList.add('form-note--success');
             }
             if (form) form.reset();
-            // Clean URL
             window.history.replaceState({}, '', 'contacto.html');
         }
     </script>

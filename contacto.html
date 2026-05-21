@@ -95,27 +95,23 @@
             </div>
         </div>
 
-        <!-- Contact Form (FormSubmit) -->
-        <form class="contact-form" id="contactForm" action="https://formsubmit.co/jpostiglione80@gmail.com" method="POST">
+        <!-- Contact Form (EmailJS) -->
+        <form class="contact-form" id="contactForm">
             <h3>Envíanos un mensaje</h3>
             <p class="contact-form__subtitle">Completa el formulario y te responderemos a la brevedad.</p>
-            <input type="hidden" name="_subject" value="Nuevo mensaje - A.P Asociados Web">
-            <input type="hidden" name="_next" value="https://juanpostiglione.github.io/AP_web/contacto.html?sent=true">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="text" name="_honey" style="display:none">
             <div class="form-row">
                 <div class="form-group">
                     <label for="nombre">Nombre y apellido</label>
-                    <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre" required>
+                    <input type="text" id="nombre" name="from_name" placeholder="Tu nombre" required>
                 </div>
                 <div class="form-group">
                     <label for="correo">Correo electrónico</label>
-                    <input type="email" id="correo" name="Email" placeholder="tu@correo.com" required>
+                    <input type="email" id="correo" name="from_email" placeholder="tu@correo.com" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="Mensaje" rows="6" placeholder="Cuéntanos sobre tu necesidad" required></textarea>
+                <textarea id="mensaje" name="message" rows="6" placeholder="Cuéntanos sobre tu necesidad" required></textarea>
             </div>
             <button type="submit" class="cta-button" id="submitBtn">Enviar mensaje</button>
             <p class="form-note" id="formNote">Tu mensaje será enviado directamente a nuestro equipo.</p>
@@ -133,18 +129,35 @@
     <script src="vendor/gsap.min.js"></script>
     <script src="vendor/ScrollTrigger.min.js"></script>
     <script src="web.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-        // Show success message if redirected after form submission
-        if (window.location.search.includes('sent=true')) {
+        emailjs.init('-DQNgPdDH-K22v2O7');
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const btn  = document.getElementById('submitBtn');
             const note = document.getElementById('formNote');
-            const form = document.getElementById('contactForm');
-            if (note) {
-                note.textContent = '\u2713 Mensaje enviado correctamente. Te responderemos a la brevedad.';
-                note.classList.add('form-note--success');
-            }
-            if (form) form.reset();
-            window.history.replaceState({}, '', 'contacto.html');
-        }
+
+            btn.disabled    = true;
+            btn.textContent = 'Enviando...';
+            note.textContent = '';
+
+            emailjs.sendForm('service_nvthdlk', 'template_m44drxx', this)
+                .then(() => {
+                    note.textContent = '✓ Mensaje enviado correctamente. Te responderemos a la brevedad.';
+                    note.classList.add('form-note--success');
+                    this.reset();
+                    btn.textContent = 'Enviar mensaje';
+                    btn.disabled    = false;
+                })
+                .catch(() => {
+                    note.textContent = 'Ocurrió un error al enviar. Por favor intenta de nuevo.';
+                    note.style.color = '#B11212';
+                    btn.textContent = 'Enviar mensaje';
+                    btn.disabled    = false;
+                });
+        });
     </script>
 </body>
 </html>

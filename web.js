@@ -173,11 +173,15 @@ if (!window.gsap) {
     });
 }
 
-// Observe rep-product-cards with staggered delay
-document.querySelectorAll('.rep-product-card').forEach((card, i) => {
-    card.style.transitionDelay = `${i * 0.08}s`;
-    observer.observe(card);
-});
+// Observe rep-product-cards — only when GSAP is absent.
+// When GSAP is present, revealBatches in initGsapMotion() handles them.
+// Running both simultaneously causes a snap-to-visible glitch.
+if (!window.gsap) {
+    document.querySelectorAll('.rep-product-card').forEach((card, i) => {
+        card.style.transitionDelay = `${i * 0.08}s`;
+        observer.observe(card);
+    });
+}
 
 // ========================
 // BUTTON INTERACTIONS
@@ -473,9 +477,17 @@ const initHeroSlideshow = () => {
     }, 700);
 
     setInterval(() => {
-        images[currentIndex].classList.remove('active');
+        const prev = images[currentIndex];
         currentIndex = (currentIndex + 1) % images.length;
-        images[currentIndex].classList.add('active');
+        const next = images[currentIndex];
+
+        prev.classList.remove('active');
+        // Clean up will-change on the outgoing image after its fade ends
+        prev.addEventListener('transitionend', () => {
+            prev.style.willChange = '';
+        }, { once: true });
+
+        next.classList.add('active');
     }, interval);
 };
 
@@ -624,8 +636,10 @@ const initGsapMotion = () => {
 
         // .contact-card + .contact-services__item are handled by initContactAnimations()
         // — omitting them here prevents the double-gsap.set() conflict
+        // story-panel-content is intentionally omitted here.
+        // initNosotrosStoryPanels() owns all story panel animations; animating
+        // the content separately caused compound opacity glitches.
         const revealBatches = [
-            { selector: '.story-panel-content', trigger: '.story--page',  y: 34, stagger: 0.12 },
             { selector: '.rep-product-card',    trigger: '.rep-products', y: 30, stagger: 0.1  },
             { selector: '.product-card',        trigger: '.product-grid', y: 34, stagger: 0.1  },
             { selector: '.contact-form',        trigger: '.contact-form', y: 24, stagger: 0    }
@@ -998,6 +1012,14 @@ const initNosotrosStoryPanels = () => {
         panels.forEach(p => p.classList.add('is-visible'));
         return;
     }
+
+    // Override CSS opacity:0 on .story-panel-content so it doesn't need its
+    // own separate animation. The panel container fade-in handles visibility;
+    // individual child elements (h3, kicker, list) do their own GSAP entrances.
+    panels.forEach(p => {
+        const content = p.querySelector('.story-panel-content');
+        if (content) gsap.set(content, { opacity: 1, y: 0 });
+    });
 
     panels.forEach((panel, i) => {
         // ── Panel container reveal ──────────────────────────────────────

@@ -1,12 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="A.P ASOCIADOS C.A - Soluciones Industriales" bodyClass="home-page site-shell" activePage="home">
   <section id="home" class="hero tw-flow-section">
     <div class="hero-bg">
       <img
-        src="/images/ap_new_01.jpeg"
+        src={`${base}images/ap_new_01.jpeg`}
         alt="Instalaciones industriales de A.P Asociados"
         class="hero-bg-image active"
         fetchpriority="high"
@@ -19,7 +21,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <span class="hero-accent-line gsap-hero-line"></span>
       <span class="hero-sub-slogan gsap-hero-line">Metalmecanica industrial desde 1982</span>
     </div>
-    <div class="hero-scroll-indicator"><a href="/nosotros" class="hero-cta-link">Conocenos</a></div>
+    <div class="hero-scroll-indicator"><a href={`${base}nosotros`} class="hero-cta-link">Conocenos</a></div>
   </section>
 
   <section id="services" class="services tw-flow-section">
@@ -29,16 +31,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="header-line"></div>
     </div>
     <div class="services-grid">
-      <a class="service-card representation-card tw-metal-card gsap-service-card" href="/chesterton.html">
-        <div class="service-card__logo-wrap"><img src="/images/chesterton.png" alt="Chesterton" class="representation-logo" /></div>
+      <a class="service-card representation-card tw-metal-card gsap-service-card" href={`${base}chesterton.html`}>
+        <div class="service-card__logo-wrap"><img src={`${base}images/chesterton.png`} alt="Chesterton" class="representation-logo" /></div>
         <div class="service-card__content"><h3>Chesterton</h3><p>Sellos mecanicos, empaquetaduras, juntas y soluciones de sellado industrial de clase mundial.</p><span class="service-card__cta">Explorar productos <span>→</span></span></div>
       </a>
-      <a class="service-card representation-card tw-metal-card gsap-service-card" href="/orange-technologies.html">
-        <div class="service-card__logo-wrap"><img src="/images/orange-technologies.png" alt="Orange Technologies" class="representation-logo" /></div>
+      <a class="service-card representation-card tw-metal-card gsap-service-card" href={`${base}orange-technologies.html`}>
+        <div class="service-card__logo-wrap"><img src={`${base}images/orange-technologies.png`} alt="Orange Technologies" class="representation-logo" /></div>
         <div class="service-card__content"><h3>Orange Technologies</h3><p>Soluciones avanzadas en abrazaderas de tuberia, recubrimientos y reparacion industrial.</p><span class="service-card__cta">Explorar productos <span>→</span></span></div>
       </a>
-      <a class="service-card representation-card tw-metal-card gsap-service-card" href="/worldfluid.html">
-        <div class="service-card__logo-wrap"><img src="/images/worldfluid.png" alt="WorldFluid" class="representation-logo" /></div>
+      <a class="service-card representation-card tw-metal-card gsap-service-card" href={`${base}worldfluid.html`}>
+        <div class="service-card__logo-wrap"><img src={`${base}images/worldfluid.png`} alt="WorldFluid" class="representation-logo" /></div>
         <div class="service-card__content"><h3>WorldFluid</h3><p>Valvulas, tuberias, sistemas de filtracion y equipos especializados para la industria.</p><span class="service-card__cta">Explorar productos <span>→</span></span></div>
       </a>
     </div>

@@ -5,7 +5,7 @@
   "main": "web.js",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run build:css && cp tailwind.css public/tailwind.css && cp style.css public/style.css && cp web.js public/web.js && astro build",
     "preview": "astro preview",
     "build:css": "tailwindcss -i ./tailwind.input.css -o ./tailwind.css --minify",
     "watch:css": "tailwindcss -i ./tailwind.input.css -o ./tailwind.css --watch",

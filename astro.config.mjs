@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  output: 'static'
+  output: 'static',
+  base: process.env.GITHUB_ACTIONS ? '/AP_web/' : '/'
 });

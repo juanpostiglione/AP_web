@@ -1,5 +1,6 @@
 ---
 const currentYear = new Date().getFullYear();
+const base = import.meta.env.BASE_URL;
 ---
 
 <footer class="footer">
@@ -10,18 +11,18 @@ const currentYear = new Date().getFullYear();
     <div class="footer-section gsap-footer-col">
       <h4>Representaciones</h4>
       <ul>
-        <li><a href="/chesterton.html">Chesterton</a></li>
-        <li><a href="/orange-technologies.html">Orange Technologies</a></li>
-        <li><a href="/worldfluid.html">WorldFluid</a></li>
+        <li><a href={`${base}chesterton.html`}>Chesterton</a></li>
+        <li><a href={`${base}orange-technologies.html`}>Orange Technologies</a></li>
+        <li><a href={`${base}worldfluid.html`}>WorldFluid</a></li>
       </ul>
     </div>
     <div class="footer-section gsap-footer-col">
       <h4>Empresa</h4>
-      <ul><li><a href="/nosotros">Nosotros</a></li></ul>
+      <ul><li><a href={`${base}nosotros`}>Nosotros</a></li></ul>
     </div>
     <div class="footer-section gsap-footer-col">
       <h4>Conectar</h4>
-      <ul><li><a href="/contacto">Contacto</a></li></ul>
+      <ul><li><a href={`${base}contacto`}>Contacto</a></li></ul>
     </div>
   </div>
   <div class="footer-bottom">

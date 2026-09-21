@@ -1,21 +1,22 @@
 ---
 const { activePage = '' } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <header class="header">
   <nav class="navbar" aria-label="Navegacion principal">
     <div class="nav-container tw-industrial-shell">
-      <a class="logo" href="/" aria-label="A.P Asociados C.A, inicio">
-        <img src="/images/logo-ap-asociados.jpg" alt="" class="logo-image" />
+      <a class="logo" href={base} aria-label="A.P Asociados C.A, inicio">
+        <img src={`${base}images/logo-ap-asociados.jpg`} alt="" class="logo-image" />
         <span class="logo-text-wrap">
           <span class="logo-text">A.P ASOCIADOS C.A</span>
         </span>
       </a>
       <ul class="nav-links">
-        <li><a href="/" class:list={['nav-link', { active: activePage === 'home' }]}>Inicio</a></li>
-        <li><a href="/nosotros" class:list={['nav-link', { active: activePage === 'about' }]}>Nosotros</a></li>
-        <li><a href="/#services" class="nav-link">Representaciones</a></li>
-        <li><a href="/contacto" class:list={['nav-link', { active: activePage === 'contact' }]}>Contacto</a></li>
+        <li><a href={base} class:list={['nav-link', { active: activePage === 'home' }]}>Inicio</a></li>
+        <li><a href={`${base}nosotros`} class:list={['nav-link', { active: activePage === 'about' }]}>Nosotros</a></li>
+        <li><a href={`${base}#services`} class="nav-link">Representaciones</a></li>
+        <li><a href={`${base}contacto`} class:list={['nav-link', { active: activePage === 'contact' }]}>Contacto</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu de navegacion" aria-expanded="false">
         <span></span>

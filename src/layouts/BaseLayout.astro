@@ -1,0 +1,27 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const { title, bodyClass = 'site-shell', activePage = '' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Soluciones metalmecanicas industriales y representaciones especializadas." />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/tailwind.css" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class={bodyClass}>
+    <Header activePage={activePage} />
+    <main><slot /></main>
+    <Footer />
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
+    <script is:inline src="/vendor/gsap.min.js"></script>
+    <script is:inline src="/vendor/ScrollTrigger.min.js"></script>
+    <script is:inline src="/web.js"></script>
+  </body>
+</html>

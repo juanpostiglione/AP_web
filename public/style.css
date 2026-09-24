@@ -464,7 +464,7 @@ body {
     text-align: center;
     padding: 0 2rem;
     pointer-events: none;
-    opacity: 0;
+    opacity: 1;
 }
 
 .hero-slogan-center .hero-company-name {
@@ -476,8 +476,8 @@ body {
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 1.2rem;
-    opacity: 0;
-    transform: translateY(15px);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero-slogan-center .hero-main-slogan {
@@ -488,8 +488,8 @@ body {
     font-weight: 700;
     line-height: 1.15;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 6px 40px rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transform: translateY(25px);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero-slogan-center .hero-accent-line {
@@ -498,8 +498,8 @@ body {
     height: 4px;
     background: linear-gradient(90deg, var(--primary-red), var(--accent-red));
     margin: 1.5rem auto;
-    opacity: 0;
-    transform: scaleX(0);
+    opacity: 1;
+    transform: scaleX(1);
     border-radius: 2px;
 }
 
@@ -511,8 +511,8 @@ body {
     letter-spacing: 0.15rem;
     font-weight: 400;
     text-transform: uppercase;
-    opacity: 0;
-    transform: translateY(15px);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero-scroll-indicator {
@@ -2546,33 +2546,10 @@ body {
     display: flex;
     align-items: flex-end;
     overflow: hidden;
-    background: var(--primary-black);
-}
-
-.nosotros-hero__bg {
-    position: absolute;
-    inset: 0;
-}
-
-.nosotros-hero__bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.3) 0%,
-        rgba(0, 0, 0, 0.2) 40%,
-        rgba(0, 0, 0, 0.6) 80%,
-        rgba(0, 0, 0, 0.85) 100%
-    );
-    z-index: 1;
-}
-
-.nosotros-hero__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.9) contrast(1.1);
+    background:
+        radial-gradient(ellipse at 20% 0%, rgba(137, 71, 71, 0.9) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 100%, rgba(37, 46, 54, 0.7) 0%, transparent 30%),
+        linear-gradient(160deg, #4b7eb1 0%, #2b3640 45%, #177acc 100%);
 }
 
 .nosotros-hero__content {
@@ -2601,15 +2578,14 @@ body {
 .nosotros-hero__title {
     font-family: var(--font-heading);
     font-size: 3.2rem;
-    color: #fff;
+    color: #ffffff;
     font-weight: 700;
     line-height: 1.15;
     margin-bottom: 0.8rem;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 .nosotros-hero__subtitle {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--medium-gray);
     font-size: 1.1rem;
     max-width: 600px;
     line-height: 1.6;
@@ -2653,7 +2629,10 @@ body {
 
 .nosotros-gallery {
     padding: 5rem 0;
-    background: #f4f5f7;
+    background:
+        radial-gradient(ellipse at 20% 0%, rgba(255,255,255,0.9) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 100%, rgba(210,218,226,0.7) 0%, transparent 60%),
+        linear-gradient(160deg, #eef1f4 0%, #dfe4e8 45%, #d3d9de 100%);
 }
 
 .nosotros-gallery__inner {
@@ -2945,6 +2924,9 @@ body {
 .home-page .services .section-header h2,
 .home-page .stats__title {
     letter-spacing: -0.01em;
+}
+.home-page .services .section-header h2 {
+    color: #eef1f3;
 }
 
 .home-page .services-grid {
@@ -3517,7 +3499,7 @@ body {
    brand body class cascades the color to EVERY var() usage site-wide.
    No need for hundreds of individual overrides. */
 .brand-chesterton {
-    --primary-red:  #3b82f6;
+    --primary-red:  #161514;
     --accent-red:   #2563eb;
     --shadow-red:   0 8px 24px rgba(59,130,246,0.22), 0 16px 48px rgba(59,130,246,0.1);
 }
@@ -3552,7 +3534,7 @@ body {
 /* ── 3. Rep Products — Brand-tinted Section Background ──────────── */
 .brand-chesterton .rep-products {
     background:
-        radial-gradient(circle at 92% 5%, rgba(59,130,246,0.06), transparent 32%),
+        radial-gradient(circle at 92% 5%, rgba(239, 241, 244, 0.06), transparent 32%),
         linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 }
 .brand-orange .rep-products {
@@ -3568,10 +3550,39 @@ body {
 
 /* ── 4. Story Panels — Rich Steel Dark Instead of Flat Black ─────── */
 .story-panel {
-    background: #0c1118;
+    background: #4578c0;
     position: relative;
 }
 .story-panel:nth-child(even) { background: #0f1322; }
+
+/* Nosotros story panels — foggy light background, dark text */
+.story--page .story-panel {
+    background:
+        radial-gradient(ellipse at 20% 0%, rgba(255,255,255,0.9) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 100%, rgba(210,218,226,0.7) 0%, transparent 60%),
+        linear-gradient(160deg, #eef1f4 0%, #dfe4e8 45%, #d3d9de 100%);
+}
+.story--page .story-panel-content h3,
+.story--page .story-panel-content p,
+.story--page .step-kicker,
+.story--page .story-area-list li,
+.story--page .story-list li {
+    color: #1a1a1a;
+}
+.story--page .story-area-list li span {
+    color: #000000;
+}
+.story--page .story-panel-media {
+    background: transparent;
+}
+.story--page .story-panel-content {
+    background: none;
+}
+.story--page .story-panel-media img {
+    inset: 8%;
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+}
 
 /* Structural engineering grid overlay */
 .story-panel::before {
@@ -3613,28 +3624,18 @@ body {
     transition: all 0.35s ease;
 }
 
-/* ── 5. Nosotros Hero — Deeper, More Cinematic ───────────────────── */
+/* ── 5. Nosotros Hero — Soft Foggy Background (no cover photo) ──── */
 .nosotros-hero { min-height: 76vh; }
 
-.nosotros-hero__bg::after {
-    background: linear-gradient(
-        160deg,
-        rgba(5, 8, 20, 0.5)  0%,
-        rgba(5, 8, 20, 0.22) 35%,
-        rgba(5, 8, 20, 0.62) 70%,
-        rgba(4, 6, 14, 0.93) 100%
-    );
-}
-
-/* Grid overlay on hero */
+/* Fog overlay — soft drifting mist bands, no photo */
 .nosotros-hero { overflow: hidden; }
 .nosotros-hero::after {
     content: '';
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+        linear-gradient(rgba(24,33,43,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(24,33,43,0.025) 1px, transparent 1px);
     background-size: 60px 60px;
     pointer-events: none;
     z-index: 1;
@@ -3655,9 +3656,9 @@ body {
 }
 
 .nosotros-hero__kicker {
-    color:        #f87580;
-    border-color: rgba(232,58,74,0.4);
-    background:   rgba(232,58,74,0.1);
+    color:        #ffffff;
+    border-color: rgba(255,255,255,0.35);
+    background:   rgba(255,255,255,0.08);
     letter-spacing: 0.3rem;
     font-size:    0.7rem;
     padding: 0.4rem 1rem;
@@ -3666,10 +3667,9 @@ body {
     font-size: clamp(2.5rem, 5.5vw, 3.7rem);
     letter-spacing: -0.025em;
     line-height: 1.08;
-    text-shadow: 0 4px 28px rgba(0,0,0,0.55), 0 2px 6px rgba(0,0,0,0.3);
 }
 .nosotros-hero__subtitle {
-    color: rgba(255,255,255,0.8);
+    color: #ffffff;
     font-size: clamp(1rem, 1.5vw, 1.1rem);
     line-height: 1.8;
 }
@@ -4071,7 +4071,7 @@ body {
 /* Rep-products section — white per brand with subtle tint */
 .brand-chesterton .rep-products {
     background:
-        radial-gradient(circle at 92% 5%, rgba(59,130,246,0.05), transparent 32%),
+        radial-gradient(circle at 92% 5%, rgba(220, 222, 225, 0.05), transparent 32%),
         #FAFAFA;
 }
 .brand-orange .rep-products {
@@ -4272,7 +4272,7 @@ body {
 
 .home-page .hero {
     min-height: min(720px, calc(100svh - 78px));
-    background: #18212b;
+    background: #4b4f54;
 }
 
 .hero::before,
@@ -4281,13 +4281,13 @@ body {
 }
 
 .home-page .hero-bg::after {
-    background: linear-gradient(90deg, rgba(18, 27, 36, 0.86) 0%, rgba(18, 27, 36, 0.56) 54%, rgba(18, 27, 36, 0.3) 100%);
+    background: linear-gradient(90deg, rgba(38, 41, 45, 0.64) 0%, rgba(64, 68, 72, 0.42) 54%, rgba(96, 101, 106, 0.2) 100%);
 }
 
 .hero-bg-image,
 .hero-bg-image.active {
     animation: none;
-    filter: brightness(0.78) contrast(1.04) saturate(0.86);
+    filter: brightness(0.92) contrast(1.04) saturate(0.92);
     transition: none;
     will-change: auto;
 }
@@ -4309,7 +4309,7 @@ body {
     line-height: 1.06;
     max-width: 730px;
     letter-spacing: 0;
-    text-shadow: none;
+    text-shadow: 0 3px 18px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.35);
 }
 
 .slogan-key {
@@ -4358,7 +4358,10 @@ body {
 
 .home-page .services {
     padding: 5.5rem 1.5rem;
-    background: #f7f8f9;
+    background:
+        radial-gradient(ellipse at 15% 0%, rgba(231, 228, 228, 0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 100%, rgba(239, 242, 245, 0.93) 0%, transparent 60%),
+        linear-gradient(160deg, #dee0e4 0%, #edeef0 50%, #ebeef1 100%);
 }
 
 .home-page .services::before,
@@ -4398,16 +4401,17 @@ body {
 }
 
 .home-page .service-card {
-    border-color: var(--soft-border);
-    box-shadow: var(--shadow-sm);
+    background: linear-gradient(160deg, rgba(254, 245, 245, 0.05) 0%, rgba(226, 204, 204, 0.02) 100%);
+    border-color: rgba(255,255,255,0.12);
+    box-shadow: 0 10px 26px rgba(226, 223, 223, 0.961);
     will-change: auto;
 }
 
 .home-page .service-card__logo-wrap {
     min-height: 172px;
     padding: 2rem;
-    background: #ffffff;
-    border-bottom: 1px solid var(--soft-border);
+    background: rgba(234,238,243,0.92);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .home-page .service-card__logo-wrap::after {
@@ -4420,27 +4424,32 @@ body {
 
 .home-page .service-card__content {
     padding: 1.5rem;
+    background: transparent;
 }
 
 .home-page .service-card h3 {
     font-size: 1.25rem;
+    color: #eef1f3;
 }
 
 .home-page .service-card p {
     font-size: 0.9rem;
     line-height: 1.65;
+    color: #a7b0b9;
 }
 
 .home-page .service-card:hover {
     transform: translateY(-4px);
-    border-color: #c7cdd2;
-    box-shadow: var(--shadow-md);
+    border-color: rgba(232,58,74,0.4);
+    box-shadow: 0 16px 34px rgba(4,6,10,0.36);
 }
 
 .home-page .stats {
     padding: 5rem 1.5rem;
-    background: #18212b;
-    background-image: none;
+    background:
+        radial-gradient(ellipse at 15% 0%, rgba(255,255,255,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 100%, rgba(150,165,185,0.18) 0%, transparent 60%),
+        linear-gradient(160deg, #191f28 0%, #262f3b 45%, #141920 100%);
 }
 
 .home-page .stat {

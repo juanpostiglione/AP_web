@@ -5,6 +5,7 @@
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('section[id]');
 const header = document.querySelector('.header');
+const backToTopBtn = document.getElementById('backToTop');
 const isHomePage = document.body.classList.contains('home-page');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
@@ -114,32 +115,36 @@ window.addEventListener('scroll', () => {
 const navToggle = document.getElementById('navToggle');
 const navLinksContainer = document.querySelector('.nav-links');
 
-navToggle.addEventListener('click', () => {
-    navLinksContainer.classList.toggle('active');
-    
-    // Animate hamburger icon
-    const spans = navToggle.querySelectorAll('span');
-    spans[0].style.transform = navLinksContainer.classList.contains('active') 
-        ? 'rotate(45deg) translate(10px, 10px)' 
-        : '';
-    spans[1].style.opacity = navLinksContainer.classList.contains('active') 
-        ? '0' 
-        : '1';
-    spans[2].style.transform = navLinksContainer.classList.contains('active') 
-        ? 'rotate(-45deg) translate(7px, -7px)' 
-        : '';
-});
+// Header.tsx already manages the mobile toggle via refs when rendered by React,
+// so navToggle/navLinksContainer may be null here — guard to avoid breaking the rest of the script.
+if (navToggle && navLinksContainer) {
+    navToggle.addEventListener('click', () => {
+        navLinksContainer.classList.toggle('active');
+        
+        // Animate hamburger icon
+        const spans = navToggle.querySelectorAll('span');
+        spans[0].style.transform = navLinksContainer.classList.contains('active') 
+            ? 'rotate(45deg) translate(10px, 10px)' 
+            : '';
+        spans[1].style.opacity = navLinksContainer.classList.contains('active') 
+            ? '0' 
+            : '1';
+        spans[2].style.transform = navLinksContainer.classList.contains('active') 
+            ? 'rotate(-45deg) translate(7px, -7px)' 
+            : '';
+    });
 
-// Close menu when a link is clicked
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navLinksContainer.classList.remove('active');
-        navToggle.querySelectorAll('span').forEach(span => {
-            span.style.transform = '';
-            span.style.opacity = '1';
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinksContainer.classList.remove('active');
+            navToggle.querySelectorAll('span').forEach(span => {
+                span.style.transform = '';
+                span.style.opacity = '1';
+            });
         });
     });
-});
+}
 
 // ========================
 // INTERSECTION OBSERVER FOR ANIMATIONS
@@ -345,7 +350,7 @@ createProgressBar();
 const statsSection = document.querySelector('.stats');
 let statsAnimated = false;
 
-const animateStatNumber = (element, target, suffix, duration = 2000) => {
+const animateStatNumber = (element, target, suffix, duration = 900) => {
     let start = 0;
     const increment = target / (duration / 16);
     const updateNum = () => {
@@ -406,7 +411,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ========================
 
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
+    if (e.key === 'Escape' && navLinksContainer) {
         navLinksContainer.classList.remove('active');
     }
 });
@@ -421,7 +426,7 @@ window.addEventListener('resize', () => {
     resizeTimer = setTimeout(() => {
         _cacheSections(); // refresh cached section offsets after layout shift
         productScrollGrids.forEach(toggleScrollHint);
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 768 && navToggle && navLinksContainer) {
             navLinksContainer.classList.remove('active');
             navToggle.querySelectorAll('span').forEach(span => {
                 span.style.transform = '';
@@ -436,8 +441,6 @@ console.log('A.P ASOCIADOS C.A Website Loaded Successfully');
 // ========================
 // BACK TO TOP BUTTON
 // ========================
-
-const backToTopBtn = document.getElementById('backToTop');
 
 if (backToTopBtn) {
     // Visibility is toggled inside the unified _onScroll handler — no extra listener
@@ -546,12 +549,12 @@ const initGsapMotion = () => {
             gsap.to(serviceCards, {
                 opacity: 1,
                 y: 0,
-                duration: 0.9,
-                stagger: 0.15,
+                duration: 0.55,
+                stagger: 0.08,
                 ease: 'power3.out',
                 scrollTrigger: {
                     trigger: '#services',
-                    start: 'top 72%',
+                    start: 'top 82%',
                     once: true
                 }
             });
@@ -564,12 +567,12 @@ const initGsapMotion = () => {
                 opacity: 1,
                 y: 0,
                 scale: 1,
-                duration: 0.85,
-                stagger: 0.12,
+                duration: 0.5,
+                stagger: 0.07,
                 ease: 'power2.out',
                 scrollTrigger: {
                     trigger: '.stats',
-                    start: 'top 74%',
+                    start: 'top 82%',
                     once: true
                 }
             });
@@ -887,13 +890,17 @@ initIndustrialEffects();
 // Fade + lift out on internal navigation for a seamless feel
 // ========================
 const initPageTransitions = () => {
+    // Next.js pages use their own client-side router; hijacking link clicks
+    // here would force full reloads and fight with back/forward navigation.
+    if (window.__NEXT_APP__) return;
     if (prefersReducedMotion || !window.gsap) return;
 
     document.querySelectorAll('a[href]').forEach(link => {
         const href = link.getAttribute('href') || '';
-        // Skip: anchors, external URLs, mailto/tel, empty
+        // Skip: anchors, hash-fragment links (handled by React), external URLs, mailto/tel, empty
         if (!href
             || href.startsWith('#')
+            || href.includes('#')
             || href.startsWith('mailto:')
             || href.startsWith('tel:')
             || href.startsWith('http')

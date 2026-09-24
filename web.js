@@ -345,7 +345,7 @@ createProgressBar();
 const statsSection = document.querySelector('.stats');
 let statsAnimated = false;
 
-const animateStatNumber = (element, target, suffix, duration = 2000) => {
+const animateStatNumber = (element, target, suffix, duration = 900) => {
     let start = 0;
     const increment = target / (duration / 16);
     const updateNum = () => {
@@ -546,12 +546,12 @@ const initGsapMotion = () => {
             gsap.to(serviceCards, {
                 opacity: 1,
                 y: 0,
-                duration: 0.9,
-                stagger: 0.15,
+                duration: 0.55,
+                stagger: 0.08,
                 ease: 'power3.out',
                 scrollTrigger: {
                     trigger: '#services',
-                    start: 'top 72%',
+                    start: 'top 82%',
                     once: true
                 }
             });
@@ -564,12 +564,12 @@ const initGsapMotion = () => {
                 opacity: 1,
                 y: 0,
                 scale: 1,
-                duration: 0.85,
-                stagger: 0.12,
+                duration: 0.5,
+                stagger: 0.07,
                 ease: 'power2.out',
                 scrollTrigger: {
                     trigger: '.stats',
-                    start: 'top 74%',
+                    start: 'top 82%',
                     once: true
                 }
             });
@@ -887,6 +887,9 @@ initIndustrialEffects();
 // Fade + lift out on internal navigation for a seamless feel
 // ========================
 const initPageTransitions = () => {
+    // Next.js pages use their own client-side router; hijacking link clicks
+    // here would force full reloads and fight with back/forward navigation.
+    if (window.__NEXT_APP__) return;
     if (prefersReducedMotion || !window.gsap) return;
 
     document.querySelectorAll('a[href]').forEach(link => {

@@ -1,15 +1,12 @@
 {
   "name": "ap_web",
-  "version": "1.0.0",
-  "description": "",
-  "main": "web.js",
+  "version": "2.0.0",
+  "description": "A.P Asociados - Soluciones Industriales",
   "scripts": {
-    "dev": "astro dev",
-    "build": "npm run build:css && cp tailwind.css public/tailwind.css && cp style.css public/style.css && cp web.js public/web.js && astro build",
-    "preview": "astro preview",
-    "build:css": "tailwindcss -i ./tailwind.input.css -o ./tailwind.css --minify",
-    "watch:css": "tailwindcss -i ./tailwind.input.css -o ./tailwind.css --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -18,18 +15,23 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/juanpostiglione/AP_web/issues"
   },
   "homepage": "https://github.com/juanpostiglione/AP_web#readme",
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "gsap": "^3.15.0"
+  },
   "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.15",
-    "tailwindcss": "^3.4.17"
-  },
-  "dependencies": {
-    "astro": "^7.3.3",
-    "gsap": "^3.15.0"
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.0.0"
   }
 }

@@ -1,0 +1,341 @@
+/* Home page refinements layered after the base styles. Import order matters because newer rules override earlier ones. */
+/* ========================
+   HOMEPAGE PROFESSIONAL REFINEMENT
+   ======================== */
+
+.home-page {
+    background:
+        radial-gradient(circle at 85% -5%, rgba(232, 58, 74, 0.08), transparent 28%),
+        linear-gradient(180deg, #fdfdfd 0%, #f7f9fc 100%);
+}
+
+.home-page .header,
+.home-page .header.is-scrolled {
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 8px 26px rgba(15, 23, 42, 0.06);
+}
+
+.home-page .nav-container {
+    max-width: 1280px;
+    padding: 0.7rem 1.5rem;
+}
+
+.home-page .logo-image {
+    height: 74px;
+    filter: none;
+}
+
+.home-page .hero {
+    min-height: calc(100vh - 70px);
+}
+
+.home-page .hero-bg::after {
+    background: linear-gradient(
+        120deg,
+        rgba(9, 15, 30, 0.76) 0%,
+        rgba(12, 19, 37, 0.56) 44%,
+        rgba(11, 17, 34, 0.74) 100%
+    );
+}
+
+.home-page .hero-slogan-center {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.home-page .hero-slogan-center .hero-main-slogan {
+    font-size: clamp(2.3rem, 5.8vw, 4.3rem);
+    letter-spacing: -0.02em;
+}
+
+.home-page .hero-slogan-center .hero-sub-slogan {
+    letter-spacing: 0.18rem;
+    color: rgba(255, 255, 255, 0.84);
+}
+
+.home-page .hero-scroll-indicator .hero-cta-link {
+    border-radius: 999px;
+    border-color: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.home-page .services {
+    padding: 7.2rem 1.5rem;
+    background:
+        radial-gradient(circle at 10% 0%, rgba(196, 32, 48, 0.07), transparent 28%),
+        linear-gradient(rgba(15, 23, 42, 0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.022) 1px, transparent 1px),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    background-size: auto, 52px 52px, 52px 52px, auto;
+}
+
+.home-page .section-header {
+    margin-bottom: 3rem;
+}
+
+.home-page .services .section-header h2,
+.home-page .stats__title {
+    letter-spacing: -0.01em;
+}
+.home-page .services .section-header h2 {
+    color: #eef1f3;
+}
+
+.home-page .services-grid {
+    max-width: 1240px;
+    gap: 1.5rem;
+}
+
+.home-page .service-card {
+    border-radius: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.06);
+    will-change: transform;
+}
+
+.home-page .service-card__logo-wrap {
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2f8 100%);
+}
+
+.home-page .service-card__content {
+    padding: 1.7rem 1.7rem 2rem;
+}
+
+.home-page .service-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(232, 58, 74, 0.24);
+    box-shadow: 0 26px 50px rgba(15, 23, 42, 0.12);
+}
+
+.home-page .stats {
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.014) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.014) 1px, transparent 1px),
+        linear-gradient(135deg, #0f172a 0%, #1d2a43 100%);
+    background-size: 44px 44px, 44px 44px, auto;
+    color: #fff;
+    padding: 6.2rem 1.5rem 6.8rem;
+}
+
+.home-page .stats::before,
+.home-page .stats::after {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.home-page .stats__title,
+.home-page .stat__number {
+    color: #ffffff;
+}
+
+.home-page .stat {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    will-change: transform;
+}
+
+.home-page .stat:hover {
+    border-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 18px 34px rgba(2, 6, 23, 0.35);
+}
+
+.home-page .stat:hover .stat__number {
+    color: #ffd0d5;
+}
+
+.home-page .stat__label {
+    color: rgba(241, 245, 249, 0.88);
+}
+
+.home-page .footer {
+    background: linear-gradient(180deg, #0d1325 0%, #090f1d 100%);
+    padding-top: 3rem;
+}
+
+.home-page .footer-content {
+    max-width: 1240px;
+}
+
+.home-page .footer-section h4 {
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.home-page .footer-bottom {
+    color: #7b8699;
+}
+
+.site-shell {
+    background:
+        radial-gradient(circle at 90% 0%, rgba(232, 58, 74, 0.08), transparent 24%),
+        linear-gradient(180deg, #fbfcfe 0%, #f4f7fb 100%);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-shell.is-ready {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.site-shell .nav-container {
+    max-width: 1280px;
+}
+
+.site-shell:not(.home-page) .header,
+.site-shell:not(.home-page) .header.is-scrolled {
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+}
+
+.site-shell .rep-hero,
+.site-shell .nosotros-hero,
+.site-shell .contact-hero {
+    border-bottom: 1px solid rgba(148, 163, 184, 0.24);
+}
+
+.site-shell .rep-products,
+.site-shell .contact-content,
+.site-shell .story--page {
+    position: relative;
+}
+
+.site-shell .rep-products::before,
+.site-shell .contact-content::before,
+.site-shell .story--page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1200px, 95%);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.5), transparent);
+}
+
+.site-shell .contact-card,
+.site-shell .contact-form,
+.site-shell .rep-product-card,
+.site-shell .product-card {
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.07);
+    border-color: rgba(148, 163, 184, 0.3);
+}
+
+.site-shell .nav-link,
+.site-shell .rep-product-card,
+.site-shell .contact-card,
+.site-shell .service-card,
+.site-shell .product-card {
+    transition-duration: 0.35s;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-shell .contact-card:hover,
+.site-shell .contact-form:hover,
+.site-shell .rep-product-card:hover,
+.site-shell .product-card:hover {
+    box-shadow: 0 24px 44px rgba(15, 23, 42, 0.13);
+}
+
+.site-shell .footer {
+    background: linear-gradient(180deg, #0c1223 0%, #070d1a 100%);
+}
+
+/* Site-wide typography hierarchy */
+.site-shell .rep-hero__title,
+.site-shell .nosotros-hero__title,
+.site-shell .contact-hero__title {
+    font-size: clamp(2rem, 5.4vw, 3.3rem);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+
+.site-shell .rep-hero__subtitle,
+.site-shell .nosotros-hero__subtitle,
+.site-shell .contact-lead {
+    font-size: clamp(0.98rem, 1.5vw, 1.16rem);
+    line-height: 1.75;
+}
+
+.site-shell .rep-products__header h2,
+.site-shell .story-panel-content h3,
+.site-shell .contact-form h3,
+.site-shell .product-card h3 {
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+}
+
+.site-shell .rep-product-card__body h3,
+.site-shell .contact-card h3,
+.site-shell .service-card h3 {
+    font-size: clamp(1.1rem, 2vw, 1.34rem);
+}
+
+.site-shell .rep-product-card__body p,
+.site-shell .contact-card p,
+.site-shell .product-card p,
+.site-shell .service-card p {
+    line-height: 1.72;
+}
+
+/* Brand-specific accent system */
+.brand-chesterton {
+    --brand-accent: #e83a4a;
+}
+
+.brand-orange {
+    --brand-accent: #f97316;
+}
+
+.brand-worldfluid {
+    --brand-accent: #0ea5e9;
+}
+
+.site-shell[class*='brand-'] .rep-product-card__accent,
+.site-shell[class*='brand-'] .header-line,
+.site-shell[class*='brand-'] .stat__bar,
+.site-shell[class*='brand-'] .hero-accent-line {
+    background: linear-gradient(90deg, var(--brand-accent), color-mix(in srgb, var(--brand-accent), #ffffff 14%));
+}
+
+.site-shell[class*='brand-'] .section-kicker,
+.site-shell[class*='brand-'] .stats__kicker,
+.site-shell[class*='brand-'] .footer-section h4,
+.site-shell[class*='brand-'] .service-card__cta,
+.site-shell[class*='brand-'] .rep-product-card__arrow {
+    color: var(--brand-accent);
+}
+
+.site-shell[class*='brand-'] .rep-product-card:hover,
+.site-shell[class*='brand-'] .contact-card:hover,
+.site-shell[class*='brand-'] .service-card:hover {
+    border-color: color-mix(in srgb, var(--brand-accent), #cbd5e1 68%);
+}
+
+.home-page .section-header h2,
+.home-page .stats__title,
+.home-page .service-card h3 {
+    text-wrap: balance;
+}
+
+@media (max-width: 768px) {
+    .home-page .hero-slogan-center .hero-main-slogan {
+        font-size: clamp(2rem, 8.3vw, 2.8rem);
+    }
+
+    .home-page .services {
+        padding: 4.7rem 1rem;
+    }
+
+    .home-page .service-card {
+        border-radius: 16px;
+    }
+
+    .home-page .stats {
+        padding: 4rem 1rem 4.6rem;
+    }
+}

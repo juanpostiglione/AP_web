@@ -1,0 +1,13 @@
+/* CSS fallback: the page stays readable when JavaScript is unavailable. */
+@media (prefers-reduced-motion: reduce) {
+    .story-panel, .story-panel-content, .rep-product-card, .product-card, .section-reveal {
+        opacity: 1;
+        transform: none;
+    }
+    .story-panel-media img { clip-path: none; transform: none; }
+}
+
+/* Header.tsx toggles the class and aria-expanded together. */
+.nav-toggle.active span:first-child { transform: rotate(45deg) translate(8px, 8px); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:last-child { transform: rotate(-45deg) translate(8px, -8px); }

@@ -1,0 +1,365 @@
+/* Palette and contrast rules for the current corporate direction. Import order matters because newer rules override earlier ones. */
+/* =================================================================
+   INDUSTRIAL PROFESSIONAL PALETTE
+   Deep industrial red · charcoal graphite · steel gray · clean white
+   Bold red corp identity + clean white sections + dark header/footer
+   ================================================================= */
+
+/* ── 1. Palette & shadow token overrides ──────────────────────────── */
+:root {
+    /* Deep industrial red — serious, reliable, strong */
+    --primary-red:    #B11212;
+    --accent-red:     #8e0e0e;
+    --shadow-red:     0 8px 24px rgba(177,18,18,0.22), 0 16px 48px rgba(177,18,18,0.1);
+
+    /* Replace near-black with charcoal so no section is pure black */
+    --primary-black:  #1A1A1A;
+
+    /* Charcoal + steel for structure and text */
+    --navy:           #1A1A1A;
+    --dark-gray:      #222222;
+    --medium-gray:    #6E7478;
+
+    /* Clean surfaces */
+    --light-gray:     #F4F4F5;
+    --section-bg-alt: #F4F4F5;
+    --card-bg:        #FFFFFF;
+    --soft-border:    #E5E7E8;
+
+    /* Light-background shadows */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.07);
+    --shadow-md: 0 3px 6px rgba(0,0,0,0.05), 0 8px 20px rgba(0,0,0,0.07);
+    --shadow-lg: 0 10px 24px rgba(0,0,0,0.07), 0 18px 44px rgba(0,0,0,0.08);
+    --shadow-xl: 0 18px 38px rgba(0,0,0,0.09), 0 28px 58px rgba(0,0,0,0.1);
+}
+
+/* ── 2. Industrial font stack (via Google Fonts) ──────────────────── */
+/* External font import here was ignored by CSS because it followed rules; local font fallback is retained. */
+
+:root {
+    --font-heading: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    --font-main:    'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ── 3. Body — clean white, dark corporate text ───────────────────── */
+body {
+    background-color: #FFFFFF;
+    color: #222222;
+}
+
+/* ── 4. Header — always deep charcoal (home & inner pages) ────────── */
+.header {
+    background-color: rgba(26, 26, 26, 0.96);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.05), 0 2px 16px rgba(0,0,0,0.22);
+}
+.header.is-scrolled {
+    background-color: rgba(22, 22, 22, 1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 4px 18px rgba(0,0,0,0.22);
+}
+.home-page .header,
+.home-page .header.is-scrolled {
+    background-color: rgba(26, 26, 26, 0.88);
+}
+/* Override the legacy white-glass inner-page header */
+.site-shell:not(.home-page) .header,
+.site-shell:not(.home-page) .header.is-scrolled {
+    background: rgba(22, 22, 22, 0.97);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.28);
+}
+
+/* ── 5. Nav — white text on charcoal header ────────────────────────── */
+.nav-link          { color: #d0d0d0; }
+.nav-link:hover    { color: var(--primary-red); }
+.logo-text         { color: #f0f0f0; }
+.nav-toggle span   { background-color: #d0d0d0; }
+
+@media (max-width: 768px) {
+    .nav-links {
+        background: rgba(22, 22, 22, 0.99);
+        border-top-color: rgba(255,255,255,0.06);
+        box-shadow: 0 14px 44px rgba(0,0,0,0.5);
+    }
+    .nav-link { color: #d0d0d0; }
+    .site-shell:not(.home-page) .header { background: rgba(22, 22, 22, 1); }
+}
+
+/* ── 6. Logo — natural on dark header + brand hover glow ─────────── */
+.logo-image {
+    filter: brightness(1.06) saturate(1.15) contrast(1.04);
+    transition: filter 0.42s ease;
+}
+.logo-image:hover {
+    filter: brightness(1.18) saturate(1.4) drop-shadow(0 0 10px rgba(177,18,18,0.55));
+}
+.brand-chesterton .logo-image:hover {
+    filter: brightness(1.15) saturate(1.4) drop-shadow(0 0 11px rgba(59,130,246,0.55));
+}
+.brand-orange .logo-image:hover {
+    filter: brightness(1.15) saturate(1.4) drop-shadow(0 0 11px rgba(249,115,22,0.55));
+}
+.brand-worldfluid .logo-image:hover {
+    filter: brightness(1.15) saturate(1.4) drop-shadow(0 0 11px rgba(14,165,233,0.55));
+}
+
+/* ── 7. Site-shell — white base with subtle red top-corner glow ───── */
+.site-shell {
+    background:
+        radial-gradient(circle at 96% 0%, rgba(177, 18, 18, 0.04), transparent 22%),
+        #FFFFFF;
+}
+
+/* ── 8. Services section ───────────────────────────────────────────── */
+.services {
+    background: #FFFFFF;
+}
+.services::before {
+    background: linear-gradient(90deg, transparent, #E5E7E8, transparent);
+}
+/* Home page version — subtle grid texture on near-white */
+.home-page .services {
+    background:
+        radial-gradient(circle at 8% 0%, rgba(177, 18, 18, 0.05), transparent 28%),
+        linear-gradient(rgba(34,34,34,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34,34,34,0.018) 1px, transparent 1px),
+        #FAFAFA;
+    background-size: auto, 52px 52px, 52px 52px, auto;
+}
+.section-header h2,
+.section-header--light h2,
+.services .section-header h2 { color: #1A1A1A; }
+
+/* ── 9. Service cards — white with steel border ───────────────────── */
+.service-card__logo-wrap       { background: #F4F4F5; }
+.service-card h3               { color: #1A1A1A; }
+.service-card p                { color: #6E7478; }
+.service-card:hover p          { color: #4a4a4a; }
+.home-page .service-card {
+    border-color: #E5E7E8;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.05);
+}
+.home-page .service-card__logo-wrap { background: #F4F4F5; }
+.home-page .service-card:hover {
+    border-color: rgba(177, 18, 18, 0.22);
+    box-shadow: 0 14px 32px rgba(0,0,0,0.1), 0 0 0 1px rgba(177,18,18,0.07);
+}
+
+/* ── 10. Stats section — keep deep dark (dark contrast section) ────── */
+.stats__title               { color: #FFFFFF; }
+.stat__number               { color: #FFFFFF; }
+.stat:hover .stat__number   { color: #ffcccf; }
+
+/* ── 11. CTA section button ────────────────────────────────────────── */
+.cta-button-secondary {
+    background-color: #FFFFFF;
+    color: #1A1A1A;
+    border: 1.5px solid rgba(255,255,255,0.35);
+}
+.cta-button-secondary:hover {
+    background: linear-gradient(135deg, var(--primary-red), var(--accent-red));
+    border-color: var(--primary-red);
+    color: #FFFFFF;
+}
+
+/* ── 12. Projects ──────────────────────────────────────────────────── */
+.project-card {
+    background: #F7F7F7;
+    border-color: #E5E7E8;
+}
+.project-card h3 { color: #1A1A1A; }
+.project-card p  { color: #6E7478; }
+.project-card:hover { box-shadow: 0 15px 50px rgba(0,0,0,0.12); }
+
+/* ── 13. Story steps (nosotros) ────────────────────────────────────── */
+.story-step h3 { color: #1A1A1A; }
+.story-step p  { color: #6E7478; }
+
+/* ── 14. Contact page ──────────────────────────────────────────────── */
+.contact-card h3                { color: #1A1A1A; }
+.contact-card p                 { color: #6E7478; }
+.contact-services h3            { color: #1A1A1A; }
+.contact-services__item {
+    color: #444444;
+    background: #F7F7F7;
+    border-color: #E5E7E8;
+}
+.contact-services__item:hover {
+    background: #FFFFFF;
+    border-color: #d4d6d8;
+    box-shadow: var(--shadow-sm);
+}
+.contact-form {
+    background: #F7F7F7;
+    border-color: #E5E7E8;
+}
+.contact-form h3                { color: #1A1A1A; }
+.contact-form__subtitle         { color: #6E7478; }
+.form-group label               { color: #222222; }
+.form-group input,
+.form-group textarea {
+    background: #FFFFFF;
+    color: #222222;
+    border-color: #d4d6d8;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: #aaaaaa; }
+.form-group input:focus,
+.form-group textarea:focus {
+    background: #FFFFFF;
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 3px rgba(177, 18, 18, 0.1);
+}
+.form-note { color: #8A8F93; }
+
+/* ── 15. Product detail pages ─────────────────────────────────────── */
+.product-card h3 { color: #1A1A1A; }
+.product-card p  { color: #6E7478; }
+.product-image {
+    background: #F4F4F5;
+    border-color: #E5E7E8;
+}
+.product-image.product-image--detail { background: #F4F4F5; }
+
+/* ── 16. Rep-product cards ─────────────────────────────────────────── */
+.rep-product-card__body h3   { color: #1A1A1A; }
+.rep-product-card__body p    { color: #6E7478; }
+.rep-product-card__icon      { background: #F4F4F5; }
+.rep-product-card:hover .rep-product-card__icon { background: rgba(177, 18, 18, 0.07); }
+
+/* Rep-products section — white per brand with subtle tint */
+.brand-chesterton .rep-products {
+    background:
+        radial-gradient(circle at 92% 5%, rgba(59,130,246,0.05), transparent 32%),
+        #FAFAFA;
+}
+.brand-orange .rep-products {
+    background:
+        radial-gradient(circle at 92% 5%, rgba(249,115,22,0.05), transparent 32%),
+        #FAFAFA;
+}
+.brand-worldfluid .rep-products {
+    background:
+        radial-gradient(circle at 92% 5%, rgba(14,165,233,0.05), transparent 32%),
+        #FAFAFA;
+}
+
+/* ── 17. Card borders & shadows — inner-page site-shell ───────────── */
+.site-shell .contact-card,
+.site-shell .contact-form,
+.site-shell .rep-product-card,
+.site-shell .product-card {
+    border-color: #E5E7E8;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+}
+.site-shell .contact-card:hover,
+.site-shell .rep-product-card:hover,
+.site-shell .product-card:hover {
+    box-shadow: 0 12px 28px rgba(0,0,0,0.1), 0 20px 44px rgba(0,0,0,0.07);
+}
+.site-shell .contact-card__icon { background: rgba(177, 18, 18, 0.07); }
+.site-shell .rep-product-card__icon { background: #F4F4F5; }
+.site-shell .rep-product-card:hover .rep-product-card__icon { background: rgba(177, 18, 18, 0.08); }
+
+/* ── 18. Section headings & text on inner pages ───────────────────── */
+.site-shell .section-header h2,
+.site-shell .rep-products__header h2,
+.site-shell .contact-services h3    { color: #1A1A1A; }
+.site-shell .rep-product-card__body h3   { color: #1A1A1A; }
+.site-shell .rep-product-card__body p    { color: #6E7478; }
+.site-shell .contact-card h3             { color: #1A1A1A; }
+.site-shell .contact-card p              { color: #6E7478; }
+.site-shell .product-card h3             { color: #1A1A1A; }
+.site-shell .product-card p              { color: #6E7478; }
+.site-shell .service-card h3             { color: #1A1A1A; }
+.site-shell .service-card p              { color: #6E7478; }
+.site-shell .service-card:hover p        { color: #4a4a4a; }
+
+/* ── 19. Section dividers ─────────────────────────────────────────── */
+.site-shell .story--page::before,
+.site-shell .rep-products::before,
+.site-shell .contact-content::before {
+    background: linear-gradient(90deg, transparent, rgba(34,34,34,0.12), transparent);
+}
+.site-shell .rep-hero,
+.site-shell .nosotros-hero,
+.site-shell .contact-hero {
+    border-bottom: 1px solid rgba(34, 34, 34, 0.12);
+}
+
+/* ── 20. Brand hover borders — light-mode ─────────────────────────── */
+.site-shell[class*='brand-'] .rep-product-card:hover,
+.site-shell[class*='brand-'] .contact-card:hover,
+.site-shell[class*='brand-'] .service-card:hover {
+    border-color: color-mix(in srgb, var(--brand-accent), #E5E7E8 70%);
+}
+
+/* ── 21. Breadcrumb — clean light strip ───────────────────────────── */
+.breadcrumb {
+    background: linear-gradient(to right, #F4F4F5 55%, rgba(244,244,245,0));
+    border-bottom: 1px solid #E5E7E8;
+}
+.breadcrumb a           { color: #8A8F93; }
+.breadcrumb a:hover     { color: var(--primary-red); }
+.breadcrumb__sep        { color: #d0d0d0; }
+.breadcrumb__current    { color: #1A1A1A; font-weight: 600; }
+
+/* ── 22. Footer — charcoal (matches header) ───────────────────────── */
+.footer { background: linear-gradient(180deg, #1A1A1A 0%, #111111 100%); }
+
+/* ── 23. Industrial dot pattern adapted for white bg ─────────────── */
+.home-page .services::after {
+    background-image: radial-gradient(circle, rgba(177, 18, 18, 0.16) 1.5px, transparent 1.5px);
+    opacity: 0.55;
+}
+
+/* ── 24. Scroll-hint & misc text ───────────────────────────────────── */
+.scroll-hint { color: #8A8F93; }
+.story--page .section-kicker { color: var(--primary-red); }
+
+/* ── 25. Scrollbar — updated to industrial red ─────────────────────── */
+::-webkit-scrollbar       { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #1A1A1A; }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--primary-red) 0%, var(--accent-red) 100%);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--primary-red); }
+
+/* ── 26. Industrial section shimmer & stats — red tint updated ─────── */
+.home-page .stat:hover .stat__number { animation: statGlow 1.2s ease-in-out; }
+@keyframes statGlow {
+    0%, 100% { text-shadow: none; }
+    50%       { text-shadow: 0 0 28px rgba(177,18,18,0.45), 0 0 56px rgba(177,18,18,0.18); }
+}
+
+/* ── 27. GPU compositing — promote key animated elements to own layers ─
+   will-change tells the browser these elements will animate, so it can
+   pre-promote them to compositor layers and avoid full-page repaints.   */
+.header                      { will-change: transform; }
+.hero-bg                     { will-change: transform; }
+.story-panel                 { will-change: transform, opacity; }
+.story-panel-media img       { will-change: transform, clip-path; }
+.service-card                { will-change: transform; }
+.rep-product-card            { will-change: transform, opacity; }
+.product-card                { will-change: transform, opacity; }
+.contact-card                { will-change: transform, opacity; }
+.nosotros-hero__img          { will-change: transform; }
+
+/* ── 28. Heading typography — Montserrat industrial weight ─────────── */
+.section-header h2,
+.stats__title,
+.hero-title,
+.nosotros-hero__title,
+.rep-hero__title,
+.contact-hero__title,
+.story-panel-content h3,
+.rep-products__header h2,
+.product-card h3,
+.service-card h3,
+.rep-product-card__body h3,
+.contact-card h3,
+.cta-section h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+

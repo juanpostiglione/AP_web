@@ -1,0 +1,73 @@
+/* Shared product detail blocks created from the old standalone pages. */
+.representation-detail {
+    padding-top: 2.5rem;
+}
+
+.representation-detail__blocks {
+    gap: 2.5rem;
+}
+
+.representation-heading:not(:first-child) {
+    margin-top: 4rem;
+}
+
+/* Detail pages use a real h1 with the same visual style as later h2s. */
+.representation-heading h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3vw, 2.7rem);
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+
+.representation-story {
+    min-height: auto;
+    margin-bottom: 2rem;
+}
+
+.representation-story .story-panel-content {
+    opacity: 1;
+    transform: none;
+}
+
+.representation-story .story-panel-content p + p {
+    margin-top: 1rem;
+}
+
+.representation-subheading {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin: 1.2em 0 0.6em;
+}
+
+.representation-figure {
+    margin-top: 1rem;
+    min-height: 220px;
+}
+
+.representation-figure img {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    clip-path: none;
+}
+
+.representation-features, .representation-related {
+    max-width: 980px;
+    width: 100%;
+    margin: 2.5rem auto 0;
+    padding: 0 0.5rem;
+}
+
+.representation-features h3 { font-family: var(--font-heading); margin-bottom: 1.2rem; }
+.representation-features__grid { display: grid; gap: 1.25rem; }
+.representation-features__grid h4 { margin-bottom: 0.35rem; }
+.representation-related { margin-top: 0; }
+.representation-related h3 { font-family: var(--font-heading); font-size: 1.3rem; margin: 2rem 0 1rem; }
+.representation-related ul { display: grid; gap: 0.65rem; }
+.representation-related a { color: var(--primary-red); }
+.representation-related a:hover { text-decoration: underline; }

@@ -1,12 +1,9 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // Use dynamic output for on-demand ISR
-  output: "standalone",
-  
-  images: {
-    unoptimized: false,
-    formats: ["image/avif", "image/webp"],
+  // Preserve old links and bookmarks after moving product HTML into Next routes.
+  async redirects() {
+    return [{ source: '/:slug.html', destination: '/:slug', permanent: true }];
   },
 };
 

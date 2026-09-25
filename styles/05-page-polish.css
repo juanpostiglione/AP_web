@@ -1,0 +1,359 @@
+/* Brand, about, and contact polish layered over the original sections. Import order matters because newer rules override earlier ones. */
+/* =================================================================
+   SITE-WIDE COLOR HARMONY, TRANSITION REFINEMENT & PAGE POLISH
+   ================================================================= */
+
+/* ── 1. Global Transition Timing Upgrade ────────────────────────── */
+:root {
+    --transition:        all 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-bounce: all 0.44s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── 2. Brand Color Cascade System ──────────────────────────────── */
+/* Overriding --primary-red / --accent-red / --shadow-red on the
+   brand body class cascades the color to EVERY var() usage site-wide.
+   No need for hundreds of individual overrides. */
+.brand-chesterton {
+    --primary-red:  #3b82f6;
+    --accent-red:   #2563eb;
+    --shadow-red:   0 8px 24px rgba(59,130,246,0.22), 0 16px 48px rgba(59,130,246,0.1);
+}
+.brand-orange {
+    --primary-red:  #f97316;
+    --accent-red:   #ea580c;
+    --shadow-red:   0 8px 24px rgba(249,115,22,0.22), 0 16px 48px rgba(249,115,22,0.1);
+}
+.brand-worldfluid {
+    --primary-red:  #0ea5e9;
+    --accent-red:   #0284c7;
+    --shadow-red:   0 8px 24px rgba(14,165,233,0.22), 0 16px 48px rgba(14,165,233,0.1);
+}
+
+/* Fill the gap: elements with hard-coded rgba(232,58,74…) values need brand overrides */
+.brand-chesterton .step-kicker,
+.brand-chesterton .nosotros-hero__kicker {
+    border-color: rgba(59,130,246,0.28);
+    background:   rgba(59,130,246,0.07);
+}
+.brand-orange .step-kicker,
+.brand-orange .nosotros-hero__kicker {
+    border-color: rgba(249,115,22,0.28);
+    background:   rgba(249,115,22,0.07);
+}
+.brand-worldfluid .step-kicker,
+.brand-worldfluid .nosotros-hero__kicker {
+    border-color: rgba(14,165,233,0.28);
+    background:   rgba(14,165,233,0.07);
+}
+
+/* ── 3. Rep Products — Brand-tinted Section Background ──────────── */
+.brand-chesterton .rep-products {
+    background:
+        radial-gradient(circle at 92% 5%, rgba(59,130,246,0.06), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+.brand-orange .rep-products {
+    background:
+        radial-gradient(circle at 92% 5%, rgba(249,115,22,0.06), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+.brand-worldfluid .rep-products {
+    background:
+        radial-gradient(circle at 92% 5%, rgba(14,165,233,0.06), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+/* ── 4. Story Panels — Rich Steel Dark Instead of Flat Black ─────── */
+.story-panel {
+    background: #450c0c;
+    position: relative;
+}
+.story-panel:nth-child(even) { background: #0f1322; }
+
+/* Nosotros story panels — foggy light background, dark text */
+.story--page .story-panel {
+    background:
+        radial-gradient(ellipse at 20% 0%, rgba(255,255,255,0.9) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 100%, rgba(210,218,226,0.7) 0%, transparent 60%),
+        linear-gradient(160deg, #eef1f4 0%, #dfe4e8 45%, #d3d9de 100%);
+}
+.story--page .story-panel-content h3,
+.story--page .story-panel-content p,
+.story--page .step-kicker,
+.story--page .story-area-list li,
+.story--page .story-list li {
+    color: #1a1a1a;
+}
+.story--page .story-area-list li span {
+    color: #000000;
+}
+.story--page .story-panel-media {
+    background: transparent;
+}
+.story--page .story-panel-content {
+    background: none;
+}
+.story--page .story-panel-media img {
+    inset: 8%;
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+}
+
+/* Structural engineering grid overlay */
+.story-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.009) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.009) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+    z-index: 0;
+}
+.story-panel-content,
+.story-panel-media { position: relative; z-index: 1; }
+
+/* Warm gradient wash on content side — makes it feel less sterile than pure black */
+.story-panel-content {
+    background: linear-gradient(135deg, rgba(232,58,74,0.025) 0%, transparent 55%);
+}
+.story-panel:nth-child(even) .story-panel-content {
+    background: linear-gradient(225deg, rgba(232,58,74,0.025) 0%, transparent 55%);
+}
+
+/* Better text legibility */
+.story-panel-content p       { color: #c8c8c8; }
+.story-panel-content h3      { letter-spacing: -0.01em; text-shadow: 0 2px 12px rgba(0,0,0,0.35); }
+.story-list li,
+.story-area-list li          { color: #c2c2c2; }
+.story-area-list li span     { color: #f0f0f0; }
+
+/* Step-kicker pill — better visibility on dark */
+.step-kicker {
+    color:        #f87580;
+    border-color: rgba(232,58,74,0.3);
+    background:   rgba(232,58,74,0.08);
+    letter-spacing: 0.22rem;
+    font-size: 0.69rem;
+    transition: all 0.35s ease;
+}
+
+/* ── 5. Nosotros Hero — Soft Foggy Background (no cover photo) ──── */
+.nosotros-hero { min-height: 76vh; }
+
+/* Fog overlay — soft drifting mist bands, no photo */
+.nosotros-hero { overflow: hidden; }
+.nosotros-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(26, 124, 237, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(24,33,43,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 1;
+}
+.nosotros-hero__content { position: relative; z-index: 2; }
+
+/* Vertical red accent bar to the left of the text block */
+.nosotros-hero__content::before {
+    content: '';
+    position: absolute;
+    left:   -1.6rem;
+    top:     0.4rem;
+    bottom:  0.4rem;
+    width:   3px;
+    background: linear-gradient(180deg, transparent 0%, var(--primary-red) 24%, var(--primary-red) 76%, transparent 100%);
+    border-radius: 2px;
+    opacity: 0.75;
+}
+
+.nosotros-hero__kicker {
+    color:        #ffffff;
+    border-color: rgba(255,255,255,0.35);
+    background:   rgba(255,255,255,0.08);
+    letter-spacing: 0.3rem;
+    font-size:    0.7rem;
+    padding: 0.4rem 1rem;
+}
+.nosotros-hero__title {
+    font-size: clamp(2.5rem, 5.5vw, 3.7rem);
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+}
+.nosotros-hero__subtitle {
+    color: #ffffff;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.8;
+}
+
+/* ── 6. Contact Hero — Deep Navy with Warm Glow ─────────────────── */
+.contact-hero {
+    position: relative;
+    background:
+        radial-gradient(ellipse at 50% 115%, rgba(232,58,74,0.12) 0%, transparent 52%),
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(160deg, #050b1a 0%, #0b1528 55%, #09102a 100%);
+    background-size: auto, 60px 60px, 60px 60px, auto;
+}
+.contact-hero__inner { position: relative; z-index: 1; }
+.contact-hero__title {
+    font-size: clamp(2.6rem, 5vw, 3rem);
+    letter-spacing: -0.022em;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.45);
+}
+
+/* Contact card icon improved spring transition */
+.contact-card__icon {
+    transition:
+        background   0.45s cubic-bezier(0.22,1,0.36,1),
+        color        0.35s ease,
+        transform    0.45s cubic-bezier(0.34,1.56,0.64,1),
+        box-shadow   0.45s ease;
+}
+
+/* Form input — cleaner focus */
+.form-group input,
+.form-group textarea {
+    background: #fafafa;
+    transition: border-color 0.32s ease, box-shadow 0.32s ease, background 0.32s ease;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    background: #ffffff;
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 4px rgba(232,58,74,0.1), 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ── 7. Rep Hero Banners — Grid + Per-Brand Bottom Glow ─────────── */
+.rep-hero {
+    min-height: 52vh;
+    overflow: hidden;
+}
+
+/* Structural grid */
+.rep-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+}
+.rep-hero__overlay { z-index: 1; }
+.rep-hero__content { z-index: 2; }
+
+/* Brand-specific diffuse bottom light source */
+.rep-hero--chesterton::before {
+    content: '';
+    position: absolute;
+    bottom: -45%; left: 50%; transform: translateX(-50%);
+    width: 75%; height: 320px;
+    background: radial-gradient(ellipse, rgba(59,130,246,0.2) 0%, transparent 72%);
+    pointer-events: none; z-index: 1;
+}
+.rep-hero--orange::before {
+    content: '';
+    position: absolute;
+    bottom: -45%; left: 50%; transform: translateX(-50%);
+    width: 75%; height: 320px;
+    background: radial-gradient(ellipse, rgba(249,115,22,0.16) 0%, transparent 72%);
+    pointer-events: none; z-index: 1;
+}
+.rep-hero--worldfluid::before {
+    content: '';
+    position: absolute;
+    bottom: -45%; left: 50%; transform: translateX(-50%);
+    width: 75%; height: 320px;
+    background: radial-gradient(ellipse, rgba(14,165,233,0.16) 0%, transparent 72%);
+    pointer-events: none; z-index: 1;
+}
+
+.rep-hero__title { letter-spacing: -0.025em; text-shadow: 0 4px 28px rgba(0,0,0,0.4); }
+.rep-hero__logo {
+    display: block;
+    margin: 0 auto 1.5rem;
+    transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease;
+}
+.rep-hero__logo:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+}
+
+/* ── 8. Breadcrumb — Better Hierarchy + Entry Animation ─────────── */
+.breadcrumb {
+    background: linear-gradient(to right, #f8fafc 55%, rgba(248,250,252,0));
+    border-bottom: 1px solid rgba(15,23,42,0.06);
+    padding: 0.85rem 2rem;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.52s ease 0.25s, transform 0.52s cubic-bezier(0.22,1,0.36,1) 0.25s;
+}
+.breadcrumb.is-loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+.breadcrumb__sep     { color: #c8d5e2; }
+.breadcrumb__current { color: #1e293b; font-weight: 600; }
+
+/* ── 9. Product Images — Subtle Hover Polish ────────────────────── */
+.product-image {
+    transition: filter 0.42s ease;
+}
+.product-card:hover .product-image {
+    filter: brightness(1.04) contrast(1.02);
+}
+
+/* ── 10. Product Detail Page Top-Section Spacing ────────────────── */
+.story[style*="padding-top"] .section-header h2 {
+    font-size: clamp(2rem, 4.2vw, 2.8rem);
+}
+.story[style*="padding-top"] .section-header {
+    padding: 0 2rem;
+    max-width: 1000px;
+    margin: 0 auto 3.5rem;
+    text-align: left;
+}
+.story[style*="padding-top"] .section-header .header-line {
+    margin-left: 0;
+}
+
+/* ── 11. Footer Links — Smoother Hover ───────────────────────────── */
+.footer-section a {
+    transition: color 0.32s cubic-bezier(0.22,1,0.36,1), padding-left 0.32s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* ── 12. Page Entry — Ensure smooth wipe on arrival ─────────────── */
+.site-shell {
+    transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* ── Mobile Adjustments ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .nosotros-hero { min-height: 55vh; }
+    .nosotros-hero__content::before { display: none; }
+    .nosotros-hero::after { background-size: 40px 40px; }
+    .rep-hero { min-height: 40vh; }
+    .rep-hero::after { background-size: 40px 40px; }
+    .contact-hero { background-size: auto, 40px 40px, 40px 40px, auto; }
+    .breadcrumb { padding: 0.7rem 1rem; }
+    .story[style*="padding-top"] .section-header { padding: 0 1rem; }
+}
+@media (max-width: 480px) {
+    .nosotros-hero { min-height: 48vh; }
+    .nosotros-hero__title { font-size: 2.1rem; }
+    .rep-hero { min-height: 38vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .nosotros-hero::after, .rep-hero::after, .contact-hero::after { display: none; }
+    .breadcrumb { opacity: 1; transform: none; transition: none; }
+    .nosotros-hero__content::before { display: none; }
+}
+

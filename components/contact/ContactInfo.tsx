@@ -1,6 +1,4 @@
 import { contactEmails } from '../../data/contact';
-import { serviceAreas } from '../../data/services';
-
 export default function ContactInfo() {
   return (
     <>

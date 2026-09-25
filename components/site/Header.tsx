@@ -2,11 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const pathname = usePathname();
-  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
@@ -31,16 +30,6 @@ export default function Header() {
   }, []);
 
   useEffect(() => { setMenuOpen(false); setHidden(false); }, [pathname]);
-
-  // From inner pages, route home first, then ScrollToServices scrolls after
-  // the home content mounts. Direct home clicks simply scroll to the section.
-  const showRepresentations = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
-    event.preventDefault();
-    setMenuOpen(false);
-    if (pathname === '/') document.getElementById('services')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    else { sessionStorage.setItem('scrollToServices', '1'); router.push('/'); }
-  };
 
   return (
     <header className={`header${scrolled ? ' is-scrolled' : ''}${hidden && !menuOpen ? ' is-hidden' : ''}`}>

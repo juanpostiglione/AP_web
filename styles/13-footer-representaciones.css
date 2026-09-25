@@ -1,0 +1,220 @@
+/* Footer editorial blanco y animación de Representaciones.
+   Footer.tsx importa este archivo, sin cambiar app/layout.tsx. */
+.footer.ap-footer,
+.home-page .footer.ap-footer {
+  padding: 0;
+  background: #fff;
+  border-top: 1px solid #dce3e7;
+  color: #24333e;
+  overflow: hidden;
+}
+
+.footer.ap-footer::before {
+  height: 3px;
+  background: linear-gradient(90deg, #a82635, #d65d63 45%, #a82635);
+}
+
+/* La retícula decorativa del antiguo pie oscuro no va con el nuevo fondo. */
+.home-page .footer.ap-footer::after { display: none; }
+
+.footer.ap-footer .footer-content,
+.home-page .footer.ap-footer .footer-content {
+  width: min(100%, 1200px);
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 5.5rem);
+  padding: clamp(3.5rem, 6vw, 5.5rem) 1.5rem 3.7rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.footer.ap-footer .footer-section { min-width: 0; }
+
+.footer.ap-footer .footer-brand__identity {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  color: #24333e;
+  font-size: clamp(1.05rem, 1.55vw, 1.48rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.footer.ap-footer .footer-brand__identity::after { display: none; }
+.footer.ap-footer .footer-brand__identity:hover { color: #a82635; padding-left: 0; }
+.footer.ap-footer .footer-brand__identity img { width: 70px; height: 82px; object-fit: contain; flex: none; }
+.footer.ap-footer .footer-brand__identity small { font-size: 0.8em; }
+
+.footer.ap-footer .footer-brand p {
+  max-width: 38ch;
+  margin: 1.45rem 0 0;
+  color: #52606a;
+  font-size: 0.96rem;
+  line-height: 1.85;
+}
+
+.footer.ap-footer .footer-section h2 {
+  margin: 0 0 1.7rem;
+  padding: 0 0 1rem;
+  border-bottom: 1px solid #dbe2e6;
+  color: #24333e;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.footer.ap-footer .footer-section ul { padding: 0; margin: 0; list-style: none; }
+.footer.ap-footer .footer-section li { margin: 0 0 0.95rem; }
+
+.footer.ap-footer .footer-section li a {
+  color: #45545e;
+  font-size: 0.97rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  transition: color 220ms ease, padding-left 220ms ease;
+}
+
+.footer.ap-footer .footer-section li a:hover,
+.footer.ap-footer .footer-section li a:focus-visible {
+  color: #a82635;
+  padding-left: 4px;
+}
+
+.footer.ap-footer .footer-contact__link {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-top: 0.45rem;
+  color: #a82635;
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.footer.ap-footer .footer-contact__link:hover { color: #7b1b28; padding-left: 0; }
+.footer.ap-footer .footer-contact__link span { transition: transform 220ms ease; }
+.footer.ap-footer .footer-contact__link:hover span { transform: translate(3px, -3px); }
+
+.footer.ap-footer .footer-bottom,
+.home-page .footer.ap-footer .footer-bottom {
+  max-width: none;
+  margin: 0;
+  padding: 1.35rem 1.5rem;
+  border-top: 1px solid #e1e6e9;
+  background: #f6f8f9;
+  color: #5d6871;
+  text-align: center;
+  font-size: 0.84rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footer.ap-footer .footer-bottom p { margin: 0; }
+
+/* Entrada por etapas: el observador del sitio activa cada tarjeta al llegar
+   a Representaciones. Solo se ocultan si JS ha habilitado la animación. */
+@media (prefers-reduced-motion: no-preference) {
+  .home-page #services .representation-card.is-reveal-ready {
+    opacity: 0;
+    filter: blur(9px);
+    transform: translate3d(-65px, 45px, 0) scale(0.91) rotate(-2deg);
+    transition: opacity 780ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 900ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 950ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 400ms ease, border-color 400ms ease;
+  }
+
+  .home-page #services .representation-card.is-reveal-ready:nth-child(2) {
+    transform: translate3d(0, 75px, 0) scale(0.9);
+  }
+
+  .home-page #services .representation-card.is-reveal-ready:nth-child(3) {
+    transform: translate3d(65px, 45px, 0) scale(0.91) rotate(2deg);
+  }
+
+  .home-page #services .representation-card.is-reveal-ready.is-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0) scale(1) rotate(0);
+  }
+
+  .home-page #services .representation-card:nth-child(1) { --rep-delay: 0ms; }
+  .home-page #services .representation-card:nth-child(2) { --rep-delay: 170ms; }
+  .home-page #services .representation-card:nth-child(3) { --rep-delay: 340ms; }
+
+  .home-page #services .representation-card.is-reveal-ready.is-visible {
+    transition-delay: var(--rep-delay, 0ms);
+  }
+
+  /* El texto y el logo llegan después de que la tarjeta comienza a entrar. */
+  .home-page #services .representation-card.is-visible .representation-logo {
+    animation: ap-rep-logo 800ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: calc(var(--rep-delay, 0ms) + 190ms);
+  }
+
+  .home-page #services .representation-card.is-visible .service-card__content > * {
+    animation: ap-rep-copy 780ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: calc(var(--rep-delay, 0ms) + 300ms);
+  }
+
+  .home-page #services .representation-card.is-visible .service-card__content > :nth-child(2) {
+    animation-delay: calc(var(--rep-delay, 0ms) + 390ms);
+  }
+
+  .home-page #services .representation-card.is-visible .service-card__content > :nth-child(3) {
+    animation-delay: calc(var(--rep-delay, 0ms) + 480ms);
+  }
+
+  /* El estado interactivo se mantiene visible tras terminar la entrada. */
+  .home-page #services .representation-card.is-reveal-ready.is-visible:hover,
+  .home-page #services .representation-card.is-reveal-ready.is-visible:focus-visible {
+    transform: translateY(-12px) scale(1.015);
+    transition-delay: 0ms;
+    box-shadow: 0 25px 55px rgba(34, 49, 59, 0.2);
+  }
+
+  @keyframes ap-rep-logo {
+    from { opacity: 0; transform: translateY(22px) scale(0.78); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes ap-rep-copy {
+    from { opacity: 0; transform: translateX(-22px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+}
+
+@media (max-width: 900px) {
+  .footer.ap-footer .footer-content,
+  .home-page .footer.ap-footer .footer-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+  .footer.ap-footer .footer-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 580px) {
+  .footer.ap-footer .footer-content,
+  .home-page .footer.ap-footer .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3.2rem 1.25rem 2.75rem;
+  }
+  .footer.ap-footer .footer-brand { grid-column: auto; }
+  .footer.ap-footer .footer-section h2 { margin-bottom: 1.1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page #services .representation-card,
+  .home-page #services .representation-card .representation-logo,
+  .home-page #services .representation-card .service-card__content > * {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}

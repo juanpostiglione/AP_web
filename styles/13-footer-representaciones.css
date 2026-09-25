@@ -1,11 +1,18 @@
-/* Footer editorial blanco y animación de Representaciones.
+/* Footer editorial oscuro y animación de Representaciones.
+   Cambia --ap-footer-bg para ajustar el fondo desde un único lugar.
    Footer.tsx importa este archivo, sin cambiar app/layout.tsx. */
 .footer.ap-footer,
 .home-page .footer.ap-footer {
+  --ap-footer-bg: #12181f;
+  --ap-footer-bottom-bg: #0e141b;
+  --ap-footer-text: #c7cdd2;
+  --ap-footer-heading: #f4f6f8;
+  --ap-footer-accent: #ff8792;
+  --ap-footer-border: #36434d;
   padding: 0;
-  background: #fff;
-  border-top: 1px solid #dce3e7;
-  color: #24333e;
+  background: var(--ap-footer-bg);
+  border-top: 1px solid var(--ap-footer-border);
+  color: var(--ap-footer-text);
   overflow: hidden;
 }
 
@@ -14,7 +21,7 @@
   background: linear-gradient(90deg, #a82635, #d65d63 45%, #a82635);
 }
 
-/* La retícula decorativa del antiguo pie oscuro no va con el nuevo fondo. */
+/* Sin retícula: el fondo oscuro queda limpio y el contenido destaca. */
 .home-page .footer.ap-footer::after { display: none; }
 
 .footer.ap-footer .footer-content,
@@ -36,7 +43,7 @@
   display: inline-flex;
   align-items: center;
   gap: 1rem;
-  color: #24333e;
+  color: var(--ap-footer-heading);
   font-size: clamp(1.05rem, 1.55vw, 1.48rem);
   font-weight: 800;
   letter-spacing: -0.025em;
@@ -45,14 +52,14 @@
 }
 
 .footer.ap-footer .footer-brand__identity::after { display: none; }
-.footer.ap-footer .footer-brand__identity:hover { color: #a82635; padding-left: 0; }
+.footer.ap-footer .footer-brand__identity:hover { color: var(--ap-footer-accent); padding-left: 0; }
 .footer.ap-footer .footer-brand__identity img { width: 70px; height: 82px; object-fit: contain; flex: none; }
 .footer.ap-footer .footer-brand__identity small { font-size: 0.8em; }
 
 .footer.ap-footer .footer-brand p {
   max-width: 38ch;
   margin: 1.45rem 0 0;
-  color: #52606a;
+  color: var(--ap-footer-text);
   font-size: 0.96rem;
   line-height: 1.85;
 }
@@ -60,8 +67,8 @@
 .footer.ap-footer .footer-section h2 {
   margin: 0 0 1.7rem;
   padding: 0 0 1rem;
-  border-bottom: 1px solid #dbe2e6;
-  color: #24333e;
+  border-bottom: 1px solid var(--ap-footer-border);
+  color: var(--ap-footer-heading);
   font-size: clamp(1.35rem, 2vw, 1.75rem);
   font-weight: 650;
   letter-spacing: -0.025em;
@@ -72,7 +79,7 @@
 .footer.ap-footer .footer-section li { margin: 0 0 0.95rem; }
 
 .footer.ap-footer .footer-section li a {
-  color: #45545e;
+  color: var(--ap-footer-text);
   font-size: 0.97rem;
   line-height: 1.65;
   overflow-wrap: anywhere;
@@ -81,7 +88,7 @@
 
 .footer.ap-footer .footer-section li a:hover,
 .footer.ap-footer .footer-section li a:focus-visible {
-  color: #a82635;
+  color: var(--ap-footer-accent);
   padding-left: 4px;
 }
 
@@ -89,12 +96,12 @@
   display: inline-flex;
   gap: 0.5rem;
   margin-top: 0.45rem;
-  color: #a82635;
+  color: var(--ap-footer-accent);
   font-size: 0.94rem;
   font-weight: 700;
 }
 
-.footer.ap-footer .footer-contact__link:hover { color: #7b1b28; padding-left: 0; }
+.footer.ap-footer .footer-contact__link:hover { color: #ffb4bc; padding-left: 0; }
 .footer.ap-footer .footer-contact__link span { transition: transform 220ms ease; }
 .footer.ap-footer .footer-contact__link:hover span { transform: translate(3px, -3px); }
 
@@ -103,9 +110,9 @@
   max-width: none;
   margin: 0;
   padding: 1.35rem 1.5rem;
-  border-top: 1px solid #e1e6e9;
-  background: #f6f8f9;
-  color: #5d6871;
+  border-top: 1px solid var(--ap-footer-border);
+  background: var(--ap-footer-bottom-bg);
+  color: var(--ap-footer-text);
   text-align: center;
   font-size: 0.84rem;
   position: relative;

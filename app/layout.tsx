@@ -18,6 +18,7 @@ import '../styles/07-current.css';
 import '../styles/08-representations.css';
 import '../styles/09-interactions.css';
 import '../styles/10-projects-services.css';
+import '../styles/11-ap-theme.css';
 
 export const metadata: Metadata = {
   title: 'A.P ASOCIADOS C.A - Soluciones Industriales',

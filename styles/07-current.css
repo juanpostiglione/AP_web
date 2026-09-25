@@ -152,9 +152,9 @@
 .home-page .services {
     padding: 5.5rem 1.5rem;
     background:
-        radial-gradient(ellipse at 15% 0%, rgba(255,255,255,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 0%, rgba(255, 255, 255, 0.709) 0%, transparent 55%),
         radial-gradient(ellipse at 85% 100%, rgba(150,165,185,0.16) 0%, transparent 60%),
-        linear-gradient(160deg, #1c232d 0%, #2b3542 50%, #171d25 100%);
+        linear-gradient(160deg, #dadfe4 0%, #2b3542 50%, #9ea4ac 100%);
 }
 
 .home-page .services::before,

@@ -1,0 +1,357 @@
+/*
+ * A.P. Asociados — propuesta de tema industrial editorial.
+ * Coloca este archivo en AP_web/styles/ y cárgalo AL FINAL de app/layout.tsx:
+ * import '../styles/11-ap-theme.css';
+ *
+ * Paleta: rojo A.P. + grafito + acero + blanco cálido.
+ * Ajusta los colores solo en :root para cambiar el carácter del tema.
+ */
+
+:root {
+  --ap-red: #ac2937;
+  --ap-red-dark: #871e2a;
+  --ap-ink: #20303a;
+  --ap-ink-soft: #51616b;
+  --ap-steel: #415664;
+  --ap-surface: #f7f8f6;
+  --ap-surface-alt: #eaf0f1;
+  --ap-line: #d8e1e4;
+  --ap-white: #ffffff;
+  --ap-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Compatibilidad con los estilos existentes. */
+  --primary-red: var(--ap-red);
+  --accent-red: var(--ap-red-dark);
+  --primary-black: var(--ap-ink);
+  --medium-gray: var(--ap-ink-soft);
+  --soft-border: var(--ap-line);
+  --light-gray: var(--ap-surface);
+  --card-bg: var(--ap-white);
+}
+
+/* Navegación: una superficie limpia, con profundidad al desplazarse. */
+.site-shell .header,
+.site-shell .header.is-scrolled {
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--ap-line);
+  box-shadow: 0 8px 28px rgba(29, 45, 54, 0.055);
+}
+
+/* Una sola anchura para Inicio y las páginas internas, incluso antes de JS. */
+.site-shell .nav-container,
+.site-shell.home-page .nav-container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0.7rem 1.25rem;
+}
+
+.site-shell .logo-image,
+.site-shell.home-page .logo-image { height: 62px; }
+
+.site-shell .nav-link::after {
+  height: 2px;
+  background: var(--ap-red);
+  transition: transform 360ms var(--ap-ease);
+}
+
+/*
+ * El hero tiene id="home" en el HTML inicial. Usar ese id evita esperar a
+ * que BodyClassSync añada .home-page tras la hidratación de Next.js.
+ * La altura y la tipografía ya son definitivas en el primer render.
+ */
+#home.hero {
+  min-height: min(720px, calc(100svh - 78px));
+  background: #4b4f54;
+}
+
+#home .hero-slogan-center {
+  width: min(100%, 980px);
+  text-align: left;
+  padding: 0 2rem;
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+#home .hero-slogan-center .hero-main-slogan {
+  font-size: clamp(2.7rem, 5.2vw, 4.6rem);
+  line-height: 1.06;
+  max-width: 730px;
+  letter-spacing: 0;
+  /* Revela el título desde abajo sin cambiar su tamaño ni su posición final. */
+  animation: ap-title-rise 1.15s var(--ap-ease) 0.12s both;
+}
+
+#home .hero-slogan-center .hero-company-name {
+  animation: ap-eyebrow-enter 680ms var(--ap-ease) both;
+}
+
+#home .hero-slogan-center .hero-accent-line {
+  transform-origin: left center;
+  animation: ap-accent-draw 720ms var(--ap-ease) 0.95s both;
+}
+
+#home .hero-slogan-center .hero-sub-slogan {
+  animation: ap-subtitle-enter 750ms var(--ap-ease) 1.05s both;
+}
+
+/* Portada: la fotografía sigue siendo protagonista y el texto es legible. */
+#home .hero-bg::after {
+  background: linear-gradient(90deg,
+    rgba(19, 34, 42, 0.78) 0%,
+    rgba(30, 45, 53, 0.40) 56%,
+    rgba(28, 41, 49, 0.17) 100%);
+}
+
+#home .hero-bg-image,
+#home .hero-bg-image.active {
+  animation: none;
+  opacity: 1;
+  filter: brightness(0.98) saturate(0.94);
+}
+
+#home .hero-scroll-indicator {
+  left: 0;
+  right: 0;
+  transform: none;
+  opacity: 1;
+  animation: none;
+  align-items: center;
+}
+
+#home .slogan-key {
+  color: #ffb6ba;
+  background: linear-gradient(90deg, #c43846, #ff9c9e) left bottom / 0 3px no-repeat;
+  animation: ap-key-ignite 850ms var(--ap-ease) 0.7s both;
+}
+
+.hero-scroll-indicator .hero-cta-link,
+.projects-cta__link,
+.services-page__cta-link {
+  background: var(--ap-red);
+  border-color: var(--ap-red);
+  transition: background-color 250ms ease, box-shadow 350ms var(--ap-ease),
+    transform 350ms var(--ap-ease);
+}
+
+.hero-scroll-indicator .hero-cta-link:hover,
+.projects-cta__link:hover,
+.services-page__cta-link:hover {
+  background: var(--ap-red-dark);
+  border-color: var(--ap-red-dark);
+  box-shadow: 0 12px 28px rgba(102, 22, 34, 0.18);
+  transform: translateY(-3px);
+}
+
+/* Representaciones: claro como el resto del recorrido, sin perder carácter. */
+.home-page .services {
+  background:
+    radial-gradient(ellipse at 6% 2%, rgba(172, 41, 55, 0.055), transparent 35%),
+    linear-gradient(155deg, #fbfcfa 0%, #eff3f3 100%);
+}
+
+.home-page .services .section-header h2,
+.home-page .service-card h3 { color: var(--ap-ink); }
+
+.home-page .services .section-kicker,
+.home-page .service-card__cta { color: var(--ap-red); }
+
+.home-page .service-card,
+.home-page .service-card.tw-metal-card {
+  background: var(--ap-white);
+  border: 1px solid var(--ap-line);
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(29, 45, 54, 0.055);
+  transition: transform 450ms var(--ap-ease),
+    box-shadow 450ms var(--ap-ease), border-color 450ms var(--ap-ease);
+}
+
+.home-page .service-card__logo-wrap {
+  background: #f2f5f5;
+  border-bottom: 1px solid var(--ap-line);
+}
+
+.home-page .service-card p,
+.home-page .service-card:hover p { color: var(--ap-ink-soft); }
+
+.home-page .service-card:hover .service-card__cta { color: var(--ap-red-dark); }
+
+/* Páginas tipo libro: paneles alternos con blancos y grises de acero. */
+.projects-showcase,
+.services-book,
+.service-work { background: var(--ap-surface-alt); }
+
+.project-panel,
+.service-chapter,
+.service-profile { background: var(--ap-white); }
+
+.project-panel:nth-child(even),
+.service-chapter--reverse { background: #eef2f2; }
+
+.project-panel + .project-panel,
+.service-chapter + .service-chapter {
+  border-top: 1px solid var(--ap-line);
+}
+
+.project-panel__content h2,
+.service-chapter h2,
+.service-work__heading h2,
+.service-profile__intro h2 { color: var(--ap-ink); }
+
+.service-work--dark {
+  background: var(--ap-steel);
+  color: var(--ap-white);
+}
+
+.service-work--dark .service-work__heading h2 { color: var(--ap-white); }
+
+.services-hero {
+  background:
+    radial-gradient(circle at 84% 20%, rgba(172, 41, 55, 0.09), transparent 32%),
+    linear-gradient(135deg, #f6f8f7 0%, #e8eef0 100%);
+}
+
+.projects-hero {
+  background:
+    radial-gradient(circle at 80% 18%, rgba(255,255,255,0.17), transparent 34%),
+    linear-gradient(120deg, #293d4a 0%, #4b6572 100%);
+}
+
+.nosotros-hero {
+  background:
+    radial-gradient(circle at 16% 8%, rgba(255,255,255,0.18), transparent 40%),
+    linear-gradient(115deg, #7c2732 0%, #9d454d 45%, #334754 100%);
+}
+
+/* Tarjetas internas y pie: misma temperatura cromática. */
+.rep-product-card,
+.product-card,
+.contact-card,
+.contact-form {
+  border-color: var(--ap-line);
+  box-shadow: 0 8px 26px rgba(29, 45, 54, 0.055);
+}
+
+.footer,
+.home-page .footer { background: #25343e; }
+
+/* Animación de entrada sobre el observador de desplazamiento que ya existe. */
+.project-panel:nth-child(odd).is-visible .project-panel__content,
+.service-chapter:not(.service-chapter--reverse).is-visible .service-chapter__content {
+  animation: ap-from-right 900ms var(--ap-ease) both;
+}
+
+.project-panel:nth-child(even).is-visible .project-panel__content,
+.service-chapter--reverse.is-visible .service-chapter__content {
+  animation: ap-from-left 900ms var(--ap-ease) both;
+}
+
+.service-work__heading.is-visible,
+.service-profile__intro.is-visible,
+.service-profile__figures.is-visible {
+  animation: ap-from-left 850ms var(--ap-ease) both;
+}
+
+.section-reveal { transition: opacity 800ms var(--ap-ease), transform 800ms var(--ap-ease); }
+
+@keyframes ap-from-right {
+  from { opacity: 0; transform: translate3d(48px, 14px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes ap-from-left {
+  from { opacity: 0; transform: translate3d(-48px, 14px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+/* Secuencia del título: entrada, acento de marca y detalles de cierre. */
+@keyframes ap-title-rise {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    transform: translate3d(0, 48px, 0);
+    filter: blur(7px);
+  }
+  65% { opacity: 1; }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+}
+
+@keyframes ap-eyebrow-enter {
+  from { opacity: 0; transform: translate3d(-24px, 0, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes ap-key-ignite {
+  from { color: #eef1f3; background-size: 0 3px; text-shadow: none; }
+  60% { color: #ffd2d3; text-shadow: 0 0 22px rgba(255, 125, 138, 0.75); }
+  to { color: #ffb6ba; background-size: 100% 3px; text-shadow: none; }
+}
+
+@keyframes ap-accent-draw {
+  from { opacity: 0; transform: scaleX(0); }
+  to { opacity: 1; transform: scaleX(1); }
+}
+
+@keyframes ap-subtitle-enter {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@media (max-width: 768px) {
+  .site-shell .nav-container,
+  .site-shell.home-page .nav-container { padding: 0.6rem 1rem; }
+
+  .site-shell .logo-image,
+  .site-shell.home-page .logo-image { height: 52px; }
+
+  #home .hero-slogan-center { padding: 0 1.25rem; }
+  #home .hero-slogan-center .hero-main-slogan {
+    font-size: clamp(2.35rem, 11vw, 3.25rem);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-page .service-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(172, 41, 55, 0.27);
+    box-shadow: 0 22px 44px rgba(29, 45, 54, 0.12);
+  }
+
+  .project-panel:hover .project-panel__media img,
+  .service-chapter:hover .service-chapter__media img {
+    transform: scale(1.045);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #home .hero-bg-image,
+  #home .hero-bg-image.active,
+  #home .hero-slogan-center,
+  #home .hero-slogan-center .hero-company-name,
+  #home .hero-slogan-center .hero-main-slogan,
+  #home .hero-slogan-center .slogan-key,
+  #home .hero-slogan-center .hero-accent-line,
+  #home .hero-slogan-center .hero-sub-slogan,
+  .project-panel.is-visible .project-panel__content,
+  .service-chapter.is-visible .service-chapter__content,
+  .service-work__heading.is-visible,
+  .service-profile__intro.is-visible,
+  .service-profile__figures.is-visible {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+    clip-path: none;
+  }
+
+  #home .slogan-key { background-size: 100% 3px; }
+
+  .home-page .service-card,
+  .project-panel__media img,
+  .service-chapter__media img { transition: none; }
+}

@@ -111,7 +111,7 @@
 .home-page .stats {
     background:
         linear-gradient(rgba(255, 255, 255, 0.014) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.014) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(251, 245, 245, 0.014) 1px, transparent 1px),
         linear-gradient(135deg, #0f172a 0%, #1d2a43 100%);
     background-size: 44px 44px, 44px 44px, auto;
     color: #fff;

@@ -5,10 +5,11 @@ import { featuredBrands } from '../../data/representations';
 // live in the three brand files next to it.
 export default function Representations() {
   return (
-    <section id="services" className="services tw-flow-section">
-      <div className="section-header section-reveal">
-        <span className="section-kicker">Nuestros Aliados</span>
-        <h2>Representaciones</h2>
+    <section id="representaciones" className="services tw-flow-section home-representations home-reveal">
+      <div className="section-header section-reveal home-reveal-piece">
+        <span className="section-kicker">Soluciones especializadas</span>
+        <h2>Representaciones industriales</h2>
+        <p className="home-representations__intro">Tecnologías complementarias para sellado, reparación, control de corrosión, válvulas y tratamiento de fluidos.</p>
         <div className="header-line" />
       </div>
       <div className="services-grid">

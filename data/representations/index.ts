@@ -15,15 +15,15 @@ export const pagesBySlug = new Map(representationPages.map((page) => [page.slug,
 
 export const featuredBrands = [
   {
-    slug: 'chesterton', name: 'Chesterton', logo: '/images/chesterton.png',
+    slug: 'chesterton', name: 'Chesterton', logo: '/images/chesterton.webp',
     description: 'Sellos mecánicos, empaquetaduras, juntas y soluciones de sellado industrial de clase mundial.',
   },
   {
-    slug: 'orange-technologies', name: 'Orange Technologies', logo: '/images/orange-technologies.png',
+    slug: 'orange-technologies', name: 'Orange Technologies', logo: '/images/orange-technologies.webp',
     description: 'Soluciones avanzadas en abrazaderas de tubería, recubrimientos y reparación industrial.',
   },
   {
-    slug: 'worldfluid', name: 'WorldFluid', logo: '/images/worldfluid.png',
+    slug: 'worldfluid', name: 'WorldFluid', logo: '/images/worldfluid.webp',
     description: 'Válvulas, tuberías, sistemas de filtración y equipos especializados para la industria.',
   },
 ];

@@ -44,7 +44,7 @@ export const worldfluidPages: RepresentationPage[] = [
           {
             "title": "Equipos ECOMAT — WorldFluid",
             "description": "Equipamiento especializado para operaciones de proceso, limpieza y mantenimiento industrial. Sistema modular y adaptable a distintas capacidades y configuraciones de sitio.",
-            "image": "/images/worldfluid/Ecomat-E.jpg",
+            "image": "/images/worldfluid/Ecomat-E.webp",
             "alt": "ECOMAT equipos",
             "detailImage": true
           }
@@ -94,7 +94,7 @@ export const worldfluidPages: RepresentationPage[] = [
           {
             "title": "ECOMAT Limpieza Automática de Tanques",
             "description": "Solución especializada para limpieza de tanques de almacenamiento y recuperación de hidrocarburos, sin necesidad de entrada de personal al espacio confinado.",
-            "image": "/images/worldfluid/Ecomat-E.jpg",
+            "image": "/images/worldfluid/Ecomat-E.webp",
             "alt": "ECOMAT limpieza automática de tanques",
             "detailImage": true
           }
@@ -144,7 +144,7 @@ export const worldfluidPages: RepresentationPage[] = [
           {
             "title": "ECOMAT Recuperación de Residuos y Limpieza",
             "description": "Tecnología de proceso para recuperación de hidrocarburos, separación de fases y acondicionamiento de tanques industriales, minimizando residuos y maximizando el valor recuperado.",
-            "image": "/images/worldfluid/Ecomat-E.jpg",
+            "image": "/images/worldfluid/Ecomat-E.webp",
             "alt": "Sistema ECOMAT recuperación de residuos de petróleo",
             "detailImage": true
           }
@@ -194,7 +194,7 @@ export const worldfluidPages: RepresentationPage[] = [
           {
             "title": "Sistemas de Filtros Industriales WorldFluid",
             "description": "Línea para acondicionamiento y filtración de fluidos orientada a la confiabilidad operativa en planta. Filtros de cartucho, bolsa y autolimpiantes para múltiples aplicaciones de proceso.",
-            "image": "/images/worldfluid/WF-Trat-Filtros.jpg",
+            "image": "/images/worldfluid/WF-Trat-Filtros.webp",
             "alt": "WorldFluid sistema de filtros industriales",
             "detailImage": true
           }
@@ -244,7 +244,7 @@ export const worldfluidPages: RepresentationPage[] = [
           {
             "title": "TECAM — Tratamiento de Residuos Industriales",
             "description": "Línea para tratamiento, reducción y manejo de residuos líquidos y sólidos en operaciones industriales y ambientales, con cumplimiento normativo garantizado.",
-            "image": "/images/worldfluid/WF-Trat-Filtros.jpg",
+            "image": "/images/worldfluid/WF-Trat-Filtros.webp",
             "alt": "TECAM tratamientos de residuos",
             "detailImage": true
           }
@@ -294,7 +294,7 @@ export const worldfluidPages: RepresentationPage[] = [
           {
             "title": "Tuberías Burgman — WorldFluid",
             "description": "Componentes para conducción y distribución de fluidos industriales, con énfasis en durabilidad estructural, estanqueidad y resistencia a condiciones de servicio severas.",
-            "image": "/images/worldfluid/WF-Tuberias.jpg",
+            "image": "/images/worldfluid/WF-Tuberias.webp",
             "alt": "WorldFluid tuberías Burgman",
             "detailImage": true
           }
@@ -344,7 +344,7 @@ export const worldfluidPages: RepresentationPage[] = [
           {
             "title": "Línea de Válvulas Industriales WorldFluid",
             "description": "Equipos para aislamiento, regulación y control de fluidos en condiciones de alta exigencia. Selección según tipo de fluido, temperatura, presión y normas aplicables (ASME, API, DIN).",
-            "image": "/images/worldfluid/WF-Valvulas.jpg",
+            "image": "/images/worldfluid/WF-Valvulas.webp",
             "alt": "WorldFluid válvulas",
             "detailImage": true
           }
@@ -360,7 +360,7 @@ export const worldfluidPages: RepresentationPage[] = [
     "label": "WorldFluid",
     "heroTitle": "WorldFluid",
     "subtitle": "Control de flujo, válvulas, filtración industrial y soluciones integrales para manejo de procesos",
-    "logo": "/images/worldfluid.png",
+    "logo": "/images/worldfluid.webp",
     "categories": [
       {
         "slug": "worldfluid-valvulas",

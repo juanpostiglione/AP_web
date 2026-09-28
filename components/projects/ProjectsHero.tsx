@@ -7,10 +7,10 @@ export default function ProjectsHero() {
         <div className="projects-hero__copy">
           <span className="portfolio-kicker">A.P ASOCIADOS C.A / PORTAFOLIO</span>
           <h1 id="projects-title">Nuestros<br /><em>Proyectos</em></h1>
-          <p>Una mirada a nuestro trabajo metalmecánico: piezas industriales, fabricación en taller y estructuras de acero.</p>
+          <p>Proyectos documentados de fabricación, recuperación de equipos, estructuras y montaje para la industria venezolana.</p>
         </div>
-        <div className="projects-hero__count" aria-label={`${projects.length} fotografías de proyectos`}>
-          <strong>{String(projects.length).padStart(2, '0')}</strong><span>fotografías<br />de proyectos</span>
+        <div className="projects-hero__count" aria-label={`${projects.length} proyectos documentados`}>
+          <strong>{String(projects.length).padStart(2, '0')}</strong><span>proyectos<br />documentados</span>
         </div>
       </div>
     </section>

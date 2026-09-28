@@ -3,12 +3,12 @@
 import { useEffect } from 'react';
 
 // Runs on the home page after a cross-page "Representaciones" navigation,
-// scrolling to #services once layout has settled instead of relying on the
+// scrolling to #representaciones once layout has settled instead of relying on the
 // browser's native hash-jump (which lands on the section before it reveals).
 export default function ScrollToServices() {
   useEffect(() => {
     const cameFromHeader = sessionStorage.getItem('scrollToServices') === '1';
-    const cameFromHash = window.location.hash === '#services';
+    const cameFromHash = window.location.hash === '#representaciones' || window.location.hash === '#services';
     if (!cameFromHeader && !cameFromHash) return;
 
     sessionStorage.removeItem('scrollToServices');
@@ -17,7 +17,7 @@ export default function ScrollToServices() {
     }
 
     const timer = setTimeout(() => {
-      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('representaciones')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 150);
 
     return () => clearTimeout(timer);

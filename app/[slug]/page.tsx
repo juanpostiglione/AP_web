@@ -14,7 +14,10 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const page = pagesBySlug.get((await params).slug);
-  return page ? { title: page.title, description: page.kind === 'brand' ? page.subtitle : page.label } : {};
+  return page ? {
+    title: page.kind === 'brand' ? `${page.heroTitle} | Representaciones` : page.title,
+    description: page.kind === 'brand' ? page.subtitle : page.label,
+  } : {};
 }
 
 export default async function RepresentationRoute({ params }: PageProps) {

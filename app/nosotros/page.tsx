@@ -3,8 +3,8 @@ import AboutHero from '../../components/about/AboutHero';
 import StoryPanels from '../../components/about/StoryPanels';
 
 export const metadata: Metadata = {
-  title: 'Nosotros | A.P ASOCIADOS C.A',
-  description: 'Conoce la trayectoria y capacidad de A.P Asociados desde 1982.',
+  title: 'Empresa',
+  description: 'Conoce la trayectoria, capacidad, miembros fundadores y junta directiva de A.P Asociados.',
 };
 
 export default function Nosotros() {

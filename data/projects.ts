@@ -1,64 +1,162 @@
-// Edit the /proyectos order, images and Spanish copy here. Photos live in public/images/.
-// These texts describe visible details. The photos are not matched to named clients or jobs.
-export const projects = [
+export type ProjectImage = {
+  src: string;
+  alt: string;
+  label?: 'Antes' | 'Después';
+};
+
+export type Project = {
+  images: ProjectImage[];
+  category: string;
+  title: string;
+  client?: string;
+  paragraphs: string[];
+};
+
+// Portafolio organizado a partir de las fotografías y descripciones entregadas
+// por A.P Asociados. Las imágenes viven en public/images/projects/.
+export const projects: Project[] = [
   {
-    image: '/images/ap_new_06.jpeg',
-    alt: 'Recipiente metálico blanco de gran formato apoyado sobre rodillos en un taller',
-    category: 'Tanques y recipientes',
-    title: 'Recipiente metálico de gran formato',
+    images: [
+      {
+        src: '/images/projects/muelle-venalum.webp',
+        alt: 'Fabricación de componentes tubulares durante el montaje del muelle de VENALUM',
+      },
+    ],
+    category: 'Infraestructura industrial',
+    title: 'Fabricación y montaje del muelle de VENALUM',
+    client: 'VENALUM',
     paragraphs: [
-      'La fotografía muestra un recipiente de grandes dimensiones en el taller. Su cuerpo metálico combina un extremo cónico, un tramo cilíndrico y conexiones visibles en el lateral.',
-      'Apoyado sobre rodillos, el conjunto permite apreciar la escala de las piezas que forman parte del trabajo metalmecánico de A.P. Asociados.',
+      'Fabricación y montaje de componentes metálicos de gran escala para la infraestructura del muelle de VENALUM.',
+      'La imagen documenta el trabajo en campo, la preparación de elementos tubulares y la coordinación de equipos de izaje junto a la estructura existente.',
     ],
   },
   {
-    image: '/images/ap_new_07.jpeg',
-    alt: 'Conjuntos metálicos rojos y verdes dispuestos en una nave industrial',
-    category: 'Fabricación metalmecánica',
-    title: 'Conjuntos industriales',
+    images: [
+      {
+        src: '/images/projects/criba-antes.webp',
+        alt: 'Criba industrial antes de los trabajos de recuperación',
+        label: 'Antes',
+      },
+      {
+        src: '/images/projects/criba-despues.webp',
+        alt: 'Criba industrial recuperada sobre una nueva estructura metálica',
+        label: 'Después',
+      },
+    ],
+    category: 'Recuperación de equipos',
+    title: 'Recuperación integral de criba industrial',
     paragraphs: [
-      'En la nave se observan varios conjuntos metálicos de formas similares, con acabados en rojo y verde. La disposición de las piezas deja ver el trabajo de fabricación de componentes en serie.',
-      'La imagen recoge una etapa de preparación en planta, antes de que estos equipos pasen a su siguiente destino.',
+      'El registro antes y después muestra la transformación del equipo, desde su condición de ingreso hasta su presentación final sobre una estructura metálica renovada.',
+      'Un ejemplo del trabajo de recuperación y adecuación de equipos industriales realizado en nuestros talleres.',
     ],
   },
   {
-    image: '/images/ap_new_08.jpeg',
-    alt: 'Tanque metálico cilíndrico naranja sostenido por bases en un taller',
-    category: 'Tanques y recipientes',
-    title: 'Tanque cilíndrico industrial',
-    paragraphs: [
-      'Este tanque horizontal se presenta sobre apoyos metálicos dentro del taller. Su acabado naranja permite distinguir la superficie, las uniones del cuerpo cilíndrico y la estructura que lo sostiene.',
-      'La fotografía muestra de cerca el tamaño y la geometría de un equipo industrial fabricado en metal.',
+    images: [
+      {
+        src: '/images/projects/galpones-alcasa.webp',
+        alt: 'Montaje de columnas y vigas para un galpón industrial de ALCASA',
+      },
     ],
-  },
-  {
-    image: '/images/ap_005.jpg',
-    alt: 'Trabajador junto a una pieza de metal en una fotografía histórica del taller',
-    category: 'Trabajo en taller',
-    title: 'Fabricación en el taller',
-    paragraphs: [
-      'La imagen de archivo muestra a un trabajador junto a una pieza metálica en proceso. El entorno de taller y los componentes visibles hablan del trabajo manual que acompaña a la fabricación industrial.',
-      'Es una mirada a la trayectoria de la empresa a través de las personas y las piezas que han pasado por su área de producción.',
-    ],
-  },
-  {
-    image: '/images/ap_038.jpg',
-    alt: 'Recipiente cilíndrico industrial amarillo con conexiones y aberturas exteriores',
-    category: 'Tanques y recipientes',
-    title: 'Recipiente industrial de gran tamaño',
-    paragraphs: [
-      'El recipiente cilíndrico amarillo incorpora conexiones, aberturas y soportes exteriores a lo largo de su superficie. La vista lateral ayuda a dimensionar el tamaño del conjunto.',
-      'La fabricación de recipientes a presión y tanques de almacenamiento figura entre las especialidades metalmecánicas descritas por A.P. Asociados.',
-    ],
-  },
-  {
-    image: '/images/ap_048.jpg',
-    alt: 'Columnas y vigas verdes de una gran estructura metálica en construcción',
     category: 'Estructuras metálicas',
-    title: 'Estructura de acero en montaje',
+    title: 'Fabricación y montaje de galpones en ALCASA',
+    client: 'ALCASA',
     paragraphs: [
-      'Columnas, vigas y cerchas conforman una estructura de acero de gran escala. La fotografía permite seguir las líneas del conjunto desde el nivel del suelo hasta la cubierta.',
-      'Este tipo de trabajo refleja la especialidad de A.P. Asociados en fabricación y montaje de estructuras metálicas para instalaciones industriales.',
+      'Fabricación y montaje de la estructura principal de galpones industriales para ALCASA.',
+      'La fotografía recoge la instalación de columnas y vigas con apoyo de grúas durante una de las etapas del montaje.',
+    ],
+  },
+  {
+    images: [
+      {
+        src: '/images/projects/ductos-refrigerados-sidor.webp',
+        alt: 'Trabajadores fabricando un conjunto de ductos refrigerados para la acería de planchones de SIDOR',
+      },
+    ],
+    category: 'Siderurgia',
+    title: 'Ductos refrigerados para la acería de planchones de SIDOR',
+    client: 'SIDOR',
+    paragraphs: [
+      'Fabricación de ductos refrigerados destinados a la acería de planchones de SIDOR.',
+      'El conjunto evidencia la precisión requerida para conformar, ensamblar y soldar la red tubular alrededor del cuerpo principal.',
+    ],
+  },
+  {
+    images: [
+      {
+        src: '/images/projects/valvula-multipuerto-alcasa.webp',
+        alt: 'Cuerpo de válvula multipuerto fabricado para la planta de carbón de ALCASA',
+      },
+    ],
+    category: 'Equipos especiales',
+    title: 'Válvula multipuerto para la planta de carbón de ALCASA',
+    client: 'ALCASA',
+    paragraphs: [
+      'Fabricación de una válvula multipuerto para la planta de carbón de ALCASA.',
+      'El equipo integra conexiones de distintos diámetros y superficies preparadas para su posterior ensamblaje en planta.',
+    ],
+  },
+  {
+    images: [
+      {
+        src: '/images/projects/recipientes-presion.webp',
+        alt: 'Dos recipientes a presión terminados dentro del taller de A.P Asociados',
+      },
+    ],
+    category: 'Tanques y recipientes',
+    title: 'Fabricación de recipientes a presión',
+    paragraphs: [
+      'Fabricación en taller de recipientes verticales y horizontales con sus soportes, conexiones y accesos correspondientes.',
+      'La imagen permite apreciar las proporciones de los equipos y el acabado de sus superficies antes de la entrega.',
+    ],
+  },
+  {
+    images: [
+      {
+        src: '/images/projects/tanque-fmo-diesel.webp',
+        alt: 'Tanque horizontal para transporte de diésel de Ferrominera Orinoco',
+      },
+    ],
+    category: 'Tanques y recipientes',
+    title: 'Tanque de diésel para Ferrominera Orinoco',
+    client: 'FMO',
+    paragraphs: [
+      'Tanque horizontal para diésel destinado a Ferrominera Orinoco, equipado con escalera, pasarela superior y elementos de seguridad.',
+      'Este registro forma parte del archivo histórico de soluciones fabricadas por A.P Asociados para la industria básica venezolana.',
+    ],
+  },
+  {
+    images: [
+      {
+        src: '/images/projects/trabajo-ducteria.webp',
+        alt: 'Fabricación de tramos de ductería en las instalaciones de A.P Asociados',
+      },
+    ],
+    category: 'Ductería industrial',
+    title: 'Trabajo de ductería industrial',
+    paragraphs: [
+      'Preparación y fabricación de tramos de ductería en las instalaciones de A.P Asociados.',
+      'El área de trabajo reúne equipos de izaje, tubería y componentes en distintas etapas del proceso productivo.',
+    ],
+  },
+  {
+    images: [
+      {
+        src: '/images/projects/ducteria-talleres.webp',
+        alt: 'Tramos de ductería en fabricación frente a los talleres de A.P Asociados',
+      },
+    ],
+    category: 'Fabricación en taller',
+    title: 'Fabricación de ductería en nuestros talleres',
+    paragraphs: [
+      'Fabricación de ductos y componentes tubulares de diferentes diámetros dentro de nuestras áreas productivas.',
+      'La vista general muestra la capacidad del taller para manejar simultáneamente piezas, equipos de transporte e izaje.',
     ],
   },
 ];
+
+export const homeProjectPreview = {
+  image: '/images/projects/home-taller-fabricacion.webp',
+  alt: 'Operario trabajando una pieza metálica en el taller de A.P Asociados',
+  category: 'Capacidad productiva',
+  title: 'Fabricación industrial desde nuestros talleres',
+};

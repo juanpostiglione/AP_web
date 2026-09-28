@@ -124,7 +124,7 @@
 /* Entrada por etapas: el observador del sitio activa cada tarjeta al llegar
    a Representaciones. Solo se ocultan si JS ha habilitado la animación. */
 @media (prefers-reduced-motion: no-preference) {
-  .home-page #services .representation-card.is-reveal-ready {
+  .home-page #representaciones .representation-card.is-reveal-ready {
     opacity: 0;
     filter: blur(9px);
     transform: translate3d(-65px, 45px, 0) scale(0.91) rotate(-2deg);
@@ -134,50 +134,50 @@
       box-shadow 400ms ease, border-color 400ms ease;
   }
 
-  .home-page #services .representation-card.is-reveal-ready:nth-child(2) {
+  .home-page #representaciones .representation-card.is-reveal-ready:nth-child(2) {
     transform: translate3d(0, 75px, 0) scale(0.9);
   }
 
-  .home-page #services .representation-card.is-reveal-ready:nth-child(3) {
+  .home-page #representaciones .representation-card.is-reveal-ready:nth-child(3) {
     transform: translate3d(65px, 45px, 0) scale(0.91) rotate(2deg);
   }
 
-  .home-page #services .representation-card.is-reveal-ready.is-visible {
+  .home-page #representaciones .representation-card.is-reveal-ready.is-visible {
     opacity: 1;
     filter: blur(0);
     transform: translate3d(0, 0, 0) scale(1) rotate(0);
   }
 
-  .home-page #services .representation-card:nth-child(1) { --rep-delay: 0ms; }
-  .home-page #services .representation-card:nth-child(2) { --rep-delay: 170ms; }
-  .home-page #services .representation-card:nth-child(3) { --rep-delay: 340ms; }
+  .home-page #representaciones .representation-card:nth-child(1) { --rep-delay: 0ms; }
+  .home-page #representaciones .representation-card:nth-child(2) { --rep-delay: 170ms; }
+  .home-page #representaciones .representation-card:nth-child(3) { --rep-delay: 340ms; }
 
-  .home-page #services .representation-card.is-reveal-ready.is-visible {
+  .home-page #representaciones .representation-card.is-reveal-ready.is-visible {
     transition-delay: var(--rep-delay, 0ms);
   }
 
   /* El texto y el logo llegan después de que la tarjeta comienza a entrar. */
-  .home-page #services .representation-card.is-visible .representation-logo {
+  .home-page #representaciones .representation-card.is-visible .representation-logo {
     animation: ap-rep-logo 800ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
     animation-delay: calc(var(--rep-delay, 0ms) + 190ms);
   }
 
-  .home-page #services .representation-card.is-visible .service-card__content > * {
+  .home-page #representaciones .representation-card.is-visible .service-card__content > * {
     animation: ap-rep-copy 780ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
     animation-delay: calc(var(--rep-delay, 0ms) + 300ms);
   }
 
-  .home-page #services .representation-card.is-visible .service-card__content > :nth-child(2) {
+  .home-page #representaciones .representation-card.is-visible .service-card__content > :nth-child(2) {
     animation-delay: calc(var(--rep-delay, 0ms) + 390ms);
   }
 
-  .home-page #services .representation-card.is-visible .service-card__content > :nth-child(3) {
+  .home-page #representaciones .representation-card.is-visible .service-card__content > :nth-child(3) {
     animation-delay: calc(var(--rep-delay, 0ms) + 480ms);
   }
 
   /* El estado interactivo se mantiene visible tras terminar la entrada. */
-  .home-page #services .representation-card.is-reveal-ready.is-visible:hover,
-  .home-page #services .representation-card.is-reveal-ready.is-visible:focus-visible {
+  .home-page #representaciones .representation-card.is-reveal-ready.is-visible:hover,
+  .home-page #representaciones .representation-card.is-reveal-ready.is-visible:focus-visible {
     transform: translateY(-12px) scale(1.015);
     transition-delay: 0ms;
     box-shadow: 0 25px 55px rgba(34, 49, 59, 0.2);
@@ -215,9 +215,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-page #services .representation-card,
-  .home-page #services .representation-card .representation-logo,
-  .home-page #services .representation-card .service-card__content > * {
+  .home-page #representaciones .representation-card,
+  .home-page #representaciones .representation-card .representation-logo,
+  .home-page #representaciones .representation-card .service-card__content > * {
     animation: none;
     transition: none;
     opacity: 1;

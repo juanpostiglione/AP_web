@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/juanpostiglione/AP_web#readme",
   "dependencies": {
-    "next": "^15.0.0",
+    "next": "^16.3.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

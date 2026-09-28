@@ -4,8 +4,8 @@
 type ServiceArea = {
   section: string;
   title: string;
-  image: string;
-  alt: string;
+  image?: string;
+  alt?: string;
   description: string;
   capabilities: string[];
   documentedExample?: string;
@@ -15,40 +15,36 @@ export const serviceAreas: ServiceArea[] = [
   {
     section: 'Estructura Metálica · Tanques y Recipientes',
     title: 'Estructura Metálica',
-    image: '/images/ap_048.jpg',
-    alt: 'Estructura de acero con columnas y cerchas en construcción',
+    image: '/images/services/estructura-metalica.webp',
+    alt: 'Estructura metálica industrial de gran escala con columnas y cerchas verdes',
     description: 'Fabricación de estructuras de acero para edificaciones y plantas industriales, puentes, viaductos, plataformas y sistemas de transporte de materiales.',
     capabilities: ['Estructuras para torres, plataformas y escaleras', 'Edificaciones y plantas industriales', 'Puentes y viaductos de acero', 'Galerías y bastidores para cintas transportadoras'],
   },
   {
     section: 'Estructura Metálica · Tanques y Recipientes',
     title: 'Tanques y Recipientes',
-    image: '/images/ap_new_05.jpeg',
-    alt: 'Fabricación de un recipiente metálico de gran tamaño dentro de un taller',
+    image: '/images/services/tanques-recipientes.webp',
+    alt: 'Fabricación de un recipiente metálico de gran tamaño sobre rodillos dentro del taller',
     description: 'Fabricación metalmecánica de recipientes a presión, tanques de almacenamiento, ductería, tuberías y otros componentes para procesos industriales.',
     capabilities: ['Tanques de almacenamiento y recipientes a presión', 'Tuberías de alta y baja presión y múltiples petroleros', 'Ductería, ductos y paneles refrigerados', 'Mecanizado de piezas mecánicas'],
   },
   {
     section: 'Montaje · Mantenimiento',
     title: 'Montaje',
-    image: '/images/ap_new_03.jpeg',
-    alt: 'Grúas industriales situadas frente a una nave de trabajo',
+    image: '/images/services/montaje.webp',
+    alt: 'Grúas industriales de gran capacidad preparadas para trabajos de montaje',
     description: 'Montaje de estructuras, instalaciones de tuberías y componentes metalmecánicos en obras e instalaciones industriales.',
     capabilities: ['Montaje de estructuras y edificaciones industriales', 'Instalación de tuberías de reinyección de aire y gas', 'Montaje de equipos y componentes de proceso'],
   },
   {
     section: 'Montaje · Mantenimiento',
     title: 'Mantenimiento',
-    image: '/images/ap_new_02.jpeg',
-    alt: 'Grúa trasladando un componente metálico usado en una instalación industrial',
     description: 'Mantenimiento de plantas industriales, reparación de conjuntos mecánicos y reconstrucción de equipos y estructuras.',
     capabilities: ['Mantenimiento de plantas industriales', 'Reparación de conjuntos mecánicos', 'Reconstrucción de equipos industriales', 'Reacondicionamiento estructural y de revestimientos de acero'],
   },
   {
     section: 'Sectores industriales',
     title: 'Sector Petrolero',
-    image: '/images/ap_new_08.jpeg',
-    alt: 'Tanque cilíndrico de color naranja en una instalación industrial',
     description: 'El sector petrolero forma parte de la experiencia metalmecánica de A.P. Asociados. Sus especialidades incluyen componentes para tuberías, almacenamiento y procesos industriales.',
     capabilities: ['Múltiples petroleros', 'Tuberías de alta y baja presión', 'Tanques de almacenamiento', 'Recipientes a presión', 'Tuberías de reinyección de aire y gas'],
     // Historical brochure example; the photograph is not attributed to this job.

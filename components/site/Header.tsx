@@ -10,6 +10,8 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastY = useRef(0);
+  const menuRef = useRef<HTMLUListElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   // The top bar compresses after scrolling and hides while moving down.
   useEffect(() => {
@@ -31,23 +33,36 @@ export default function Header() {
 
   useEffect(() => { setMenuOpen(false); setHidden(false); }, [pathname]);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      setMenuOpen(false);
+      toggleRef.current?.focus();
+    };
+    window.addEventListener('keydown', onKeyDown);
+    requestAnimationFrame(() => menuRef.current?.querySelector<HTMLAnchorElement>('a')?.focus());
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [menuOpen]);
+
   return (
     <header className={`header${scrolled ? ' is-scrolled' : ''}${hidden && !menuOpen ? ' is-hidden' : ''}`}>
       <nav className="navbar" aria-label="Navegación principal">
         <div className="nav-container tw-industrial-shell">
           <Link className="logo" href="/" aria-label="A.P Asociados C.A, inicio" onClick={() => setMenuOpen(false)}>
-            <img src="/images/logo-ap-asociados.jpg" alt="" className="logo-image" />
+            <img src="/images/logo-ap-asociados.webp" alt="" className="logo-image" width="729" height="778" />
             <span className="logo-text-wrap"><span className="logo-text">A.P ASOCIADOS C.A</span></span>
           </Link>
-          <ul className={`nav-links${menuOpen ? ' active' : ''}`}>
+          <ul id="primary-navigation" ref={menuRef} className={`nav-links${menuOpen ? ' active' : ''}`}>
             <li><Link href="/" className={`nav-link${pathname === '/' ? ' active' : ''}`} onClick={() => setMenuOpen(false)}>Inicio</Link></li>
-            <li><Link href="/nosotros" className={`nav-link${pathname === '/nosotros' ? ' active' : ''}`} onClick={() => setMenuOpen(false)}>Trayectoria</Link></li>
+            <li><Link href="/nosotros" className={`nav-link${pathname === '/nosotros' ? ' active' : ''}`} onClick={() => setMenuOpen(false)}>Empresa</Link></li>
             <li><Link href="/servicios" className={`nav-link${pathname === '/servicios' ? ' active' : ''}`} onClick={() => setMenuOpen(false)}>Servicios</Link></li>
             <li><Link href="/proyectos" className={`nav-link${pathname === '/proyectos' ? ' active' : ''}`} onClick={() => setMenuOpen(false)}>Proyectos</Link></li>
             <li><Link href="/contacto" className={`nav-link${pathname === '/contacto' ? ' active' : ''}`} onClick={() => setMenuOpen(false)}>Contacto</Link></li>
           </ul>
-          <button className={`nav-toggle${menuOpen ? ' active' : ''}`} type="button" aria-label="Abrir menú de navegación"
-            aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>
+          <button ref={toggleRef} className={`nav-toggle${menuOpen ? ' active' : ''}`} type="button"
+            aria-label={menuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
+            aria-controls="primary-navigation" aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>
             <span /><span /><span />
           </button>
         </div>

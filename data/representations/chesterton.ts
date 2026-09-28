@@ -44,13 +44,13 @@ export const chestertonPages: RepresentationPage[] = [
           {
             "title": "Sistemas Compuestos para Concreto (CCS)",
             "description": "Los sistemas compuestos para concreto ARC (CCS) reparan, reconstruyen y protegen todas las estructuras de concreto de entornos abrasivos, corrosivos y químicamente agresivos.",
-            "image": "/images/third-party/elementos-estructurales-concreto.jpg",
+            "image": "/images/third-party/elementos-estructurales-concreto.webp",
             "alt": "Sistemas compuestos para concreto"
           },
           {
             "title": "Sistemas Compuestos para Metales (MCS)",
             "description": "Los sistemas compuestos para metales ARC (MCS) reparan, reconstruyen y protegen todo tipo de equipo industrial de procesos y estructuras de entornos abrasivos, corrosivos y químicamente agresivos.",
-            "image": "/images/third-party/titanium-clad-copper.jpg",
+            "image": "/images/third-party/titanium-clad-copper.webp",
             "alt": "Sistemas compuestos para metales"
           },
           {
@@ -105,7 +105,7 @@ export const chestertonPages: RepresentationPage[] = [
           {
             "title": "Sellado de Equipos Rotativos",
             "description": "Chesterton ofrece empaquetaduras mecánicas para una variedad de equipos, incluidos, sin limitarse a, bombas, mezcladores, sopladores, ventiladores, etc. funcionando bajo una gran variedad de condiciones operativas.",
-            "image": "/images/third-party/Polymer-rotating-2.jpg",
+            "image": "/images/third-party/Polymer-rotating-2.webp",
             "alt": "Sellado de equipos rotativos"
           },
           {
@@ -117,7 +117,7 @@ export const chestertonPages: RepresentationPage[] = [
           {
             "title": "Sellado de Válvulas",
             "description": "Las empaquetaduras de Chesterton para sellado de válvulas, general y de alto rendimiento, ofrecen una excelente capacidad de sellado y una superior fiabilidad a lo largo de una gran variedad de aplicaciones.",
-            "image": "/images/third-party/Valvula-de-flotador-valveseal.jpg",
+            "image": "/images/third-party/Valvula-de-flotador-valveseal.webp",
             "alt": "Sellado de válvulas"
           },
           {
@@ -190,13 +190,13 @@ export const chestertonPages: RepresentationPage[] = [
           {
             "title": "Grasas y lubricantes",
             "description": "Lubricantes especiales diseñados para un óptimo rendimiento en aplicaciones industriales específicas. Diseñados para mejorar la fiabilidad de los equipos, a la vez que reducen la energía y el producto utilizados.",
-            "image": "/images/third-party/Grasa-espesa-rodamientos.jpg",
+            "image": "/images/third-party/Grasa-espesa-rodamientos.webp",
             "alt": "Grasas y lubricantes"
           },
           {
             "title": "Productos Especiales para Mantenimiento",
             "description": "Amplia variedad de agentes químicos para mantenimiento destinados a mejorar la velocidad y eficacia de las operaciones diarias de mantenimiento, a la vez que mejoran la seguridad de los trabajadores y minimizan el impacto medioambiental.",
-            "image": "/images/third-party/Maintenance.png",
+            "image": "/images/third-party/Maintenance.webp",
             "alt": "Productos especiales para mantenimiento"
           },
           {
@@ -208,13 +208,13 @@ export const chestertonPages: RepresentationPage[] = [
           {
             "title": "Control de la Corrosión",
             "description": "Protección especial contra la corrosión para metales y concreto. Protección a corto y largo plazo de piezas metálicas en almacenamiento y envío.",
-            "image": "/images/third-party/Corrosion_Control_Pipe_Thread_Cleaning.jpg",
+            "image": "/images/third-party/Corrosion_Control_Pipe_Thread_Cleaning.webp",
             "alt": "Control de la corrosión"
           },
           {
             "title": "Sistema de Reconstrucción de Metales",
             "description": "Tecnología compuesta probada, convenientemente empaquetada para facilitar su uso en el mantenimiento diario.",
-            "image": "/images/third-party/belzona-thumb_1131_3.jpg",
+            "image": "/images/third-party/belzona-thumb_1131_3.webp",
             "alt": "Sistema de reconstrucción de metales"
           },
           {
@@ -269,7 +269,7 @@ export const chestertonPages: RepresentationPage[] = [
           {
             "title": "Sellos de Cartucho Estándar",
             "description": "Los sellos de cartucho han sido diseñados para desempeñarse de manera robusta en aplicaciones de sellado a través de segmentos de la industria. Se desempeñan de manera comprobada para la estandarización a lo largo de la planta, proporcionando una máxima fiabilidad.",
-            "image": "/images/third-party/GMP1_4x3.png",
+            "image": "/images/third-party/GMP1_4x3.webp",
             "alt": "Sellos de cartucho"
           },
           {
@@ -311,7 +311,7 @@ export const chestertonPages: RepresentationPage[] = [
           {
             "title": "Sellos de Componentes",
             "description": "Sirve para bombas DIN, ISO, ANSI y otras bombas populares, sin desgaste en el manguito del eje, capacidad de autoalineación, piezas totalmente de desgaste, caras de sellado, aros tóricos, tornillos y resortes son reemplazables a un costo bajo.",
-            "image": "/images/third-party/rbs_photo_1024.jpg",
+            "image": "/images/third-party/rbs_photo_1024.webp",
             "alt": "Sellos de componentes"
           },
           {
@@ -329,7 +329,7 @@ export const chestertonPages: RepresentationPage[] = [
           {
             "title": "Protección de Cojinetes GBS",
             "description": "Rompa el ciclo de tiempo improductivo causado por fallas relacionadas con sellos de rebaba. Los sellos de cara GBS dejan afuera virtualmente todas las fuentes externas de contaminación para lograr una máxima protección contra fallos en los cojinetes.",
-            "image": "/images/third-party/directindustry-17469-15682870.jpg",
+            "image": "/images/third-party/directindustry-17469-15682870.webp",
             "alt": "Protección de cojinetes"
           }
         ]
@@ -377,19 +377,19 @@ export const chestertonPages: RepresentationPage[] = [
           {
             "title": "Sellos Hidráulicos y Neumáticos",
             "description": "Rascadores de alto rendimiento, sellos para vástagos, sellos para pistón y dispositivos auxiliares diseñados para diversas aplicaciones hidráulicas y neumáticas en la industria.",
-            "image": "/images/third-party/Hydraulic-and-Pneumatic-Seals.jpg",
+            "image": "/images/third-party/Hydraulic-and-Pneumatic-Seals.webp",
             "alt": "Sellos hidráulicos y neumáticos"
           },
           {
             "title": "Sellos para Uso Rotativo",
             "description": "Sellos rotativos de alto rendimiento diseñados para uso en diversas aplicaciones, que incluyen protección de rodamientos y cajas de engranajes.",
-            "image": "/images/third-party/R01-R_Special.png",
+            "image": "/images/third-party/R01-R_Special.webp",
             "alt": "Sellos para uso rotativo"
           },
           {
             "title": "Sellos Energizados con Resortes",
             "description": "Sellos poliméricos energizados con resortes diseñados para resolver los desafíos más difíciles de sellado que existen en la actualidad.",
-            "image": "/images/third-party/seal-sb-p02.png",
+            "image": "/images/third-party/seal-sb-p02.webp",
             "alt": "Sellos energizados con resortes"
           },
           {
@@ -416,7 +416,7 @@ export const chestertonPages: RepresentationPage[] = [
     "label": "Chesterton",
     "heroTitle": "Chesterton",
     "subtitle": "Soluciones avanzadas en sellado mecánico, polímeros, empaquetaduras y recubrimientos industriales",
-    "logo": "/images/chesterton.png",
+    "logo": "/images/chesterton.webp",
     "categories": [
       {
         "slug": "chesterton-sellos-mecanicos",

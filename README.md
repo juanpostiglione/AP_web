@@ -18,7 +18,9 @@ Vercel-specific settings are required.
 
 | Goal | File or folder |
 | --- | --- |
-| Home headline and photo | `components/home/Hero.tsx`; photo in `public/images/` |
+| Home headline, CTAs and hero photo | `components/home/Hero.tsx`; photo in `public/images/` |
+| Home capacity figures | `components/home/HomeStats.tsx` and `data/services.ts` |
+| Home services and project selections | `components/home/CoreServices.tsx`, `FeaturedProjects.tsx` |
 | Three representation cards on home | `data/representations/index.ts` |
 | Nosotros story copy/photos | `data/about.ts` |
 | Projects copy, photo order and descriptions | `data/projects.ts` (photos in `public/images/`) |
@@ -30,7 +32,8 @@ Vercel-specific settings are required.
 | WorldFluid product pages | `data/representations/worldfluid.ts` |
 | Product page structure | `components/representations/` |
 | Site navigation/footer | `components/site/Header.tsx`, `Footer.tsx` |
-| Colors and sizing | `styles/06-palette.css`, `styles/07-current.css` |
+| Current home design and cross-site fixes | `styles/14-site-upgrade.css` |
+| Legacy colors and product-page sizing | `styles/06-palette.css`, `styles/07-current.css` |
 | Projects and Services page styles | `styles/10-projects-services.css` |
 
 ## Project layout
@@ -49,6 +52,19 @@ styles/                  CSS in original cascade order plus new page rules
 public/images/           All images referenced by Next.js pages
 public/font/             Local DM Serif font files
 ```
+
+The image library uses WebP files to reduce transfer size. Keep new photography
+authentic to the company and export it as WebP before adding it to the data
+files. `styles/14-site-upgrade.css` is the single place for new global design
+work; the earlier numbered styles remain as compatibility layers for the
+converted product catalogue.
+
+## Domain and metadata
+
+Set `NEXT_PUBLIC_SITE_URL` in the deployment environment when the final domain
+is available. Canonical social-image URLs and the sitemap are intentionally
+omitted until that value exists, so local builds do not publish a fake domain.
+The social preview is already prepared at `public/og.png`.
 
 `styles/01-base.css` through `07-current.css` preserve the original style
 layering. Rules in later files take precedence over earlier rules with the same
@@ -80,6 +96,8 @@ input. The CSS-visible cards are revealed on every route visit by
 
 ## Contact form
 
-The contact form loads the EmailJS browser SDK on `/contacto`. Its public key,
-service ID, and template ID are in `data/contact.ts`. Test a submission after
-deploying to confirm the EmailJS account allows the production domain.
+The contact form loads the EmailJS browser SDK on `/contacto`. Configure its
+public key, service ID, and template ID through the variables documented in
+`.env.example`; the current values remain as compatibility fallbacks in
+`data/contact.ts`. Test one real submission after deploying to confirm the
+EmailJS account allows the production domain.

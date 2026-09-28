@@ -48,21 +48,21 @@ export const orangePages: RepresentationPage[] = [
           {
             "title": "NRX",
             "description": "Sistema para protección anticorrosiva con aplicación rápida y alta compatibilidad con recubrimientos finales.",
-            "image": "/images/nrx/1-NRX.jpg",
+            "image": "/images/nrx/1-NRX.webp",
             "alt": "NRX vista 1",
             "imageHeight": 340
           },
           {
             "title": "Aplicación industrial",
             "description": "Diseñado para mantenimiento y reparación de estructuras sometidas a ambientes severos.",
-            "image": "/images/nrx/2-NRX.jpg",
+            "image": "/images/nrx/2-NRX.webp",
             "alt": "NRX vista 2",
             "imageHeight": 340
           },
           {
             "title": "Protección durable",
             "description": "Genera una capa químicamente estable y resistente, ayudando a mitigar corrosión bajo película.",
-            "image": "/images/nrx/3-NRX.jpg",
+            "image": "/images/nrx/3-NRX.webp",
             "alt": "NRX vista 3",
             "imageHeight": 340
           }
@@ -79,19 +79,19 @@ export const orangePages: RepresentationPage[] = [
           {
             "title": "Acero",
             "description": "Puede aplicarse sobre acero pintado o sin pintar, con o sin óxido. Se recomienda limpieza mecánica y lavado a presión para remover escama suelta, aceite y suciedad antes de aplicar dos capas y top coat de bajo VOC.",
-            "image": "/images/nrx/Applications-Steel-300.jpg",
+            "image": "/images/nrx/Applications-Steel-300.webp",
             "alt": "Aplicación en acero"
           },
           {
             "title": "Aluminio",
             "description": "Reacciona químicamente con distintas aleaciones de aluminio y mejora la adhesión. Requiere preparación mínima: retirar grasa, aceite y suciedad; luego aplicar una capa base para top coats de alto desempeño.",
-            "image": "/images/nrx/Applications-Aluminum-300.jpg",
+            "image": "/images/nrx/Applications-Aluminum-300.webp",
             "alt": "Aplicación en aluminio"
           },
           {
             "title": "Galvanizado",
             "description": "Compatible con galvanizado envejecido. En galvanizado nuevo puede requerirse ataque previo para eliminar cromatos superficiales y asegurar adherencia adecuada.",
-            "image": "/images/nrx/Applications-photo-D-300x300.jpg",
+            "image": "/images/nrx/Applications-photo-D-300x300.webp",
             "alt": "Aplicación en galvanizado"
           }
         ]
@@ -112,7 +112,7 @@ export const orangePages: RepresentationPage[] = [
             "html": "Por eso NRX plantea un esquema de menor preparación, sin granallado en muchos casos, con proceso de aplicación más seguro y eficiente."
           }
         ],
-        "image": "/images/nrx/slide1-700x346.jpg",
+        "image": "/images/nrx/slide1-700x346.webp",
         "imageAlt": "Gráfico completo de fallas de recubrimientos"
       },
       {
@@ -126,25 +126,25 @@ export const orangePages: RepresentationPage[] = [
           {
             "title": "Sin sand blasting",
             "description": "El esquema NRX reduce o elimina la necesidad de granallado en muchos mantenimientos.",
-            "image": "/images/nrx/solution-photo1-279x179.jpg",
+            "image": "/images/nrx/solution-photo1-279x179.webp",
             "alt": "Comparación granallado"
           },
           {
             "title": "Lavado y recubrimiento",
             "description": "Proceso con lavado de agua a baja presión (aprox. 3.000–3.500 psi) y aplicación del sistema.",
-            "image": "/images/nrx/solution-photo2-279x179.jpg",
+            "image": "/images/nrx/solution-photo2-279x179.webp",
             "alt": "Lavado a baja presión"
           },
           {
             "title": "Mayor seguridad operativa",
             "description": "Disminuye necesidad de equipamiento pesado de protección frente a métodos tradicionales.",
-            "image": "/images/nrx/solution-photo3-279x179.jpg",
+            "image": "/images/nrx/solution-photo3-279x179.webp",
             "alt": "Menor equipo de protección"
           },
           {
             "title": "No tóxico / Sin VOC",
             "description": "Sistema basado en agua, no tóxico y de bajo impacto ambiental.",
-            "image": "/images/nrx/solution-photo-279x179.jpg",
+            "image": "/images/nrx/solution-photo-279x179.webp",
             "alt": "Producto no tóxico"
           }
         ]
@@ -160,31 +160,31 @@ export const orangePages: RepresentationPage[] = [
           {
             "title": "Cómo funciona NanoPrime",
             "description": "Reacciona con hierro y óxido para formar fosfato de hierro, creando un nano-enlace con superficies metálicas y pintadas.",
-            "image": "/images/nrx/producg-description-photo-400x265.jpg",
+            "image": "/images/nrx/producg-description-photo-400x265.webp",
             "alt": "Descripción técnica NRX"
           },
           {
             "title": "Características",
             "description": "Sistema base agua, monocomponente y autoimprimante. Puede aplicarse sobre superficies húmedas con mínima preparación.",
-            "image": "/images/nrx/application-photo2-400x197.jpg",
+            "image": "/images/nrx/application-photo2-400x197.webp",
             "alt": "Parámetros de aplicación NRX"
           },
           {
             "title": "Adhesión en PSI (Epoxy)",
             "description": "Resultados de adhesión sobre acero oxidado con acabado epóxico de alto desempeño.",
-            "image": "/images/nrx/Results-Image1-360x286.jpg",
+            "image": "/images/nrx/Results-Image1-360x286.webp",
             "alt": "Resultados de adhesión epoxi"
           },
           {
             "title": "Adhesión en PSI (Polysiloxane)",
             "description": "Resultados de adhesión sobre acero oxidado con acabado polisiloxano.",
-            "image": "/images/nrx/Results-Image2-360x286.jpg",
+            "image": "/images/nrx/Results-Image2-360x286.webp",
             "alt": "Resultados de adhesión polisiloxano"
           },
           {
             "title": "Compatibilidad de top coats",
             "description": "Compatible con recubrimientos base agua o 100% sólidos: epoxi, poliuretano, polisiloxano, entre otros de bajo VOC.",
-            "image": "/images/nrx/Technical4-300x300.jpg",
+            "image": "/images/nrx/Technical4-300x300.webp",
             "alt": "Información técnica NRX"
           }
         ]
@@ -259,19 +259,19 @@ export const orangePages: RepresentationPage[] = [
           {
             "title": "Uso y Aplicación",
             "description": "Reparación temporal rápida en fugas o daños de tuberías, reduciendo tiempo fuera de operación.",
-            "image": "/images/pipe-clamps/1-Pipe-Clamps.jpg",
+            "image": "/images/pipe-clamps/1-Pipe-Clamps.webp",
             "alt": "Pipe Clamps uso"
           },
           {
             "title": "Configuración Estándar con Liner de Goma",
             "description": "Configuración estándar con liner de goma que funciona como junta para sellar grietas y perforaciones.",
-            "image": "/images/pipe-clamps/2-Pipe-Clamps.jpg",
+            "image": "/images/pipe-clamps/2-Pipe-Clamps.webp",
             "alt": "Pipe Clamps estándar"
           },
           {
             "title": "Opción con Liner de PTFE",
             "description": "Opción con PTFE expandido para mejorar resistencia química y sellado en aplicaciones más exigentes.",
-            "image": "/images/pipe-clamps/3-Pipe-Clamps.jpg",
+            "image": "/images/pipe-clamps/3-Pipe-Clamps.webp",
             "alt": "Pipe Clamps con PTFE"
           }
         ]
@@ -351,13 +351,13 @@ export const orangePages: RepresentationPage[] = [
           {
             "title": "RubbaFIX",
             "description": "Compuesto para reparación rápida de bandas transportadoras y otros elementos elastoméricos.",
-            "image": "/images/rubbafix/RubbaFIX-1-350.png",
+            "image": "/images/rubbafix/RubbaFIX-1-350.webp",
             "alt": "RubbaFIX presentación"
           },
           {
             "title": "Aplicación en campo",
             "description": "Compatible con aplicadores MELTA® para ejecutar reparaciones prácticas en mantenimiento industrial.",
-            "image": "/images/rubbafix/RubbaFIX-2-600.jpg",
+            "image": "/images/rubbafix/RubbaFIX-2-600.webp",
             "alt": "RubbaFIX aplicación"
           }
         ]
@@ -431,7 +431,7 @@ export const orangePages: RepresentationPage[] = [
           {
             "title": "Orange Technologies",
             "description": "Portafolio orientado a confiabilidad operativa, reducción de tiempos de parada y protección de activos.",
-            "image": "/images/orange/logo-orange.jpeg",
+            "image": "/images/orange/logo-orange.webp",
             "alt": "Orange Technologies"
           }
         ]
@@ -489,7 +489,7 @@ export const orangePages: RepresentationPage[] = [
     "label": "Orange Technologies",
     "heroTitle": "Orange Technologies",
     "subtitle": "Soluciones de recubrimiento, aislamiento térmico y protección anticorrosiva para equipos industriales",
-    "logo": "/images/orange-technologies.png",
+    "logo": "/images/orange-technologies.webp",
     "categories": [
       {
         "slug": "orange-soluciones",
@@ -564,37 +564,37 @@ export const orangePages: RepresentationPage[] = [
           {
             "title": "Aplicación sencilla",
             "description": "Producto diseñado para una aplicación práctica sobre distintas superficies, con limpieza simple durante la instalación y mantenimiento.",
-            "image": "/images/u-coat/ucoat-image01-300x225.jpg",
+            "image": "/images/u-coat/ucoat-image01-300x225.webp",
             "alt": "U-COAT 301 aplicación"
           },
           {
             "title": "Seguridad del personal",
             "description": "Ayuda a reducir riesgos asociados a superficies calientes en líneas de proceso, tanques y equipos industriales.",
-            "image": "/images/u-coat/ucoat-image02-1-300x225.jpg",
+            "image": "/images/u-coat/ucoat-image02-1-300x225.webp",
             "alt": "U-COAT 301 seguridad térmica"
           },
           {
             "title": "Protección integral",
             "description": "Alternativa moderna frente a aislamientos convencionales, sin retener humedad ni promover óxido, moho o bacterias.",
-            "image": "/images/u-coat/ucoat-image03-300x225.jpg",
+            "image": "/images/u-coat/ucoat-image03-300x225.webp",
             "alt": "U-COAT 301 protección"
           },
           {
             "title": "Control térmico en tanques",
             "description": "Contribuye a sellar la temperatura en equipos de almacenamiento y proceso, reduciendo pérdidas por fluctuaciones ambientales.",
-            "image": "/images/u-coat/ucoat-image04-300x225.jpg",
+            "image": "/images/u-coat/ucoat-image04-300x225.webp",
             "alt": "U-COAT 301 en tanques"
           },
           {
             "title": "Uso exterior",
             "description": "Excelente desempeño para aplicaciones al aire libre, incluyendo como recubrimiento superior en techos industriales.",
-            "image": "/images/u-coat/ucoat-image05-300x225.jpg",
+            "image": "/images/u-coat/ucoat-image05-300x225.webp",
             "alt": "U-COAT 301 aplicaciones exteriores"
           },
           {
             "title": "Métodos de aplicación",
             "description": "Puede instalarse con aspersión, rodillo o brocha, facilitando su implementación en diferentes condiciones de trabajo.",
-            "image": "/images/u-coat/ucoat-image06-300x225.jpg",
+            "image": "/images/u-coat/ucoat-image06-300x225.webp",
             "alt": "U-COAT 301 métodos de aplicación"
           }
         ]

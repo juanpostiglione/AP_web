@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import Hero from '../components/home/Hero';
 import HomeStats from '../components/home/HomeStats';
-import CoreServices from '../components/home/CoreServices';
-import FeaturedProjects from '../components/home/FeaturedProjects';
 import Representations from '../components/home/Representations';
 import HomeCTA from '../components/home/HomeCTA';
 import ScrollToServices from '../components/site/ScrollToServices';
@@ -15,8 +13,6 @@ export default function Home() {
       <ScrollToServices />
       <Hero />
       <HomeStats />
-      <CoreServices />
-      <FeaturedProjects />
       <Representations />
       <HomeCTA />
     </>

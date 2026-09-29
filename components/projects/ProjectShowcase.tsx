@@ -1,38 +1,23 @@
 import Link from 'next/link';
-import { projects } from '../../data/projects';
-import BeforeAfterGallery from './BeforeAfterGallery';
+import { projectGroups } from '../../data/projects';
+import ProjectGallery from './ProjectGallery';
 
 export default function ProjectShowcase() {
   return (
     <section className="projects-showcase" aria-label="Galería de proyectos">
-      {projects.map((project, index) => (
-        <article className="project-panel" key={project.title}>
-          {project.images.length > 1 ? (
-            <BeforeAfterGallery images={project.images} />
-          ) : (
-            <div className="project-panel__media">
-              {project.images.map((image, imageIndex) => (
-              <figure className="project-panel__media-item" key={image.src}>
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  loading={index === 0 && imageIndex === 0 ? 'eager' : 'lazy'}
-                  decoding="async"
-                />
-                {image.label && <figcaption>{image.label}</figcaption>}
-              </figure>
-              ))}
+      {projectGroups.map((group, index) => (
+        <article className="project-group" key={group.category}>
+          <header className="project-group__header">
+            <div>
+              <span className="portfolio-kicker">{group.category}</span>
+              <h2>{group.title}</h2>
             </div>
-          )}
-          <div className="project-panel__content">
-            <span className="project-panel__index">Proyecto {String(index + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}</span>
-            <span className="project-panel__category">{project.category}</span>
-            <h2>{project.title}</h2>
-            {project.images.length > 1 && <span className="project-panel__scroll-note">Usa las flechas o desliza para comparar <span aria-hidden="true">↔</span></span>}
-            {project.client && <span className="project-panel__client">Cliente / {project.client}</span>}
-            {project.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-            <span className="project-panel__rule" aria-hidden="true" />
-          </div>
+            <div className="project-group__intro">
+              <p>{group.description}</p>
+              <span>Usa las flechas o desliza horizontalmente</span>
+            </div>
+          </header>
+          <ProjectGallery images={group.images} eager={index === 0} label={group.category} />
         </article>
       ))}
       <div className="projects-cta">

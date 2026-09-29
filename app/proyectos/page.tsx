@@ -4,7 +4,7 @@ import ProjectShowcase from '../../components/projects/ProjectShowcase';
 
 export const metadata: Metadata = {
   title: 'Proyectos',
-  description: 'Proyectos metalmecánicos de A.P Asociados para VENALUM, ALCASA, SIDOR y Ferrominera Orinoco.',
+  description: 'Selección de proyectos metalmecánicos de fabricación, montaje, recuperación de equipos y recipientes industriales.',
 };
 
 export default function Proyectos() {

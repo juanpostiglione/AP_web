@@ -2,8 +2,8 @@ import { serviceProfile } from '../../data/services';
 
 const stats = [
   { value: '1982', label: 'Año de puesta en marcha' },
-  { value: serviceProfile.areas[0].value, label: 'Superficie total' },
-  { value: serviceProfile.areas[1].value, label: 'Área de talleres' },
+  { value: serviceProfile.areas[0].value.replace(' ', '\u00a0'), label: 'Superficie total' },
+  { value: serviceProfile.areas[1].value.replace(' ', '\u00a0'), label: 'Área de talleres' },
   { value: String(serviceProfile.sectors.length).padStart(2, '0'), label: 'Sectores industriales' },
 ];
 
@@ -14,7 +14,7 @@ export default function HomeStats() {
         {stats.map((stat) => (
           <div className="home-stat home-reveal-piece" key={stat.label}>
             <strong>{stat.value}</strong>
-            <span>{stat.label}</span>
+            <span className="home-stat__label">{stat.label}</span>
           </div>
         ))}
       </div>

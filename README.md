@@ -20,7 +20,7 @@ Vercel-specific settings are required.
 | --- | --- |
 | Home headline, CTAs and hero photo | `components/home/Hero.tsx`; photo in `public/images/` |
 | Home capacity figures | `components/home/HomeStats.tsx` and `data/services.ts` |
-| Home services and project selections | `components/home/CoreServices.tsx`, `FeaturedProjects.tsx` |
+| Home statistics and representations | `components/home/HomeStats.tsx`, `Representations.tsx` |
 | Three representation cards on home | `data/representations/index.ts` |
 | Nosotros story copy/photos | `data/about.ts` |
 | Projects copy, photo order and descriptions | `data/projects.ts` (photos in `public/images/`) |

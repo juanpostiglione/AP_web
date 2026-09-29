@@ -10,8 +10,8 @@ export const companyOverview = {
 
 export const companyFacts = [
   { value: '1982', label: 'Inicio de operaciones' },
-  { value: '28.500 m²', label: 'Superficie total' },
-  { value: '5.500 m²', label: 'Área de talleres' },
+  { value: '28.500\u00a0m²', label: 'Superficie total', compact: true },
+  { value: '5.500\u00a0m²', label: 'Área de talleres', compact: true },
   { value: '04', label: 'Sectores industriales' },
 ];
 

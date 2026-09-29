@@ -1,7 +1,14 @@
 export type ProjectImage = {
   src: string;
   alt: string;
-  label?: 'Antes' | 'Después';
+  label?: string;
+};
+
+export type ProjectGroup = {
+  category: string;
+  title: string;
+  description: string;
+  images: ProjectImage[];
 };
 
 export type Project = {
@@ -58,7 +65,7 @@ export const projects: Project[] = [
       },
     ],
     category: 'Estructuras metálicas',
-    title: 'Fabricación y montaje de galpones en ALCASA',
+    title: 'Fabricación y montaje de galpones industriales',
     client: 'ALCASA',
     paragraphs: [
       'Fabricación y montaje de la estructura principal de galpones industriales para ALCASA.',
@@ -88,7 +95,7 @@ export const projects: Project[] = [
       },
     ],
     category: 'Equipos especiales',
-    title: 'Válvula multipuerto para la planta de carbón de ALCASA',
+    title: 'Válvula multipuerto para planta de carbón',
     client: 'ALCASA',
     paragraphs: [
       'Fabricación de una válvula multipuerto para la planta de carbón de ALCASA.',
@@ -154,9 +161,76 @@ export const projects: Project[] = [
   },
 ];
 
-export const homeProjectPreview = {
-  image: '/images/projects/home-taller-fabricacion.webp',
-  alt: 'Operario trabajando una pieza metálica en el taller de A.P Asociados',
-  category: 'Capacidad productiva',
-  title: 'Fabricación industrial desde nuestros talleres',
-};
+export const projectGroups: ProjectGroup[] = [
+  {
+    category: 'Fabricación y montaje',
+    title: 'Infraestructura y soluciones fabricadas a escala industrial',
+    description: 'Una selección de trabajos desarrollados en taller y montados en campo para operaciones industriales de alta exigencia.',
+    images: [
+      {
+        src: '/images/projects/muelle-venalum.webp',
+        alt: 'Fabricación de componentes tubulares durante el montaje de un muelle industrial',
+        label: 'Fabricación y montaje de componentes para infraestructura de muelle',
+      },
+      {
+        src: '/images/projects/galpones-alcasa.webp',
+        alt: 'Montaje de columnas y vigas para un galpón industrial',
+        label: 'Montaje de columnas y vigas para galpones industriales',
+      },
+      {
+        src: '/images/projects/ductos-refrigerados-sidor.webp',
+        alt: 'Fabricación de un conjunto de ductos refrigerados para una acería',
+        label: 'Conformado y ensamblaje de ductos refrigerados para siderurgia',
+      },
+      {
+        src: '/images/projects/trabajo-ducteria.webp',
+        alt: 'Fabricación de tramos de ductería en las instalaciones de A.P Asociados',
+        label: 'Preparación de tramos de ductería industrial en taller',
+      },
+      {
+        src: '/images/projects/ducteria-talleres.webp',
+        alt: 'Tramos de ductería en fabricación frente a los talleres de A.P Asociados',
+        label: 'Ductos y componentes tubulares en distintas etapas de fabricación',
+      },
+    ],
+  },
+  {
+    category: 'Recuperación y equipos especiales',
+    title: 'Equipos intervenidos, recuperados y fabricados a medida',
+    description: 'Procesos de recuperación integral y fabricación especial realizados de acuerdo con las condiciones de cada operación.',
+    images: [
+      {
+        src: '/images/projects/criba-antes.webp',
+        alt: 'Criba industrial al inicio de los trabajos de recuperación',
+        label: 'Inspección y condición inicial de una criba industrial',
+      },
+      {
+        src: '/images/projects/criba-despues.webp',
+        alt: 'Criba industrial recuperada sobre una nueva estructura metálica',
+        label: 'Criba recuperada y presentada sobre su estructura renovada',
+      },
+      {
+        src: '/images/projects/valvula-multipuerto-alcasa.webp',
+        alt: 'Cuerpo de válvula multipuerto fabricado para una planta de carbón',
+        label: 'Fabricación especial de válvula multipuerto para planta de carbón',
+      },
+    ],
+  },
+  {
+    category: 'Tanques y recipientes',
+    title: 'Recipientes industriales fabricados en nuestros talleres',
+    description: 'Equipos construidos con sus soportes, conexiones, accesos y elementos de seguridad según los requerimientos de servicio.',
+    images: [
+      {
+        src: '/images/projects/recipientes-presion.webp',
+        alt: 'Dos recipientes a presión terminados dentro del taller de A.P Asociados',
+        label: 'Recipientes a presión verticales y horizontales terminados en taller',
+      },
+      {
+        src: '/images/projects/tanque-fmo-diesel.webp',
+        alt: 'Tanque horizontal para transporte de diésel',
+        label: 'Tanque horizontal con escalera, pasarela y elementos de seguridad',
+      },
+    ],
+  },
+];

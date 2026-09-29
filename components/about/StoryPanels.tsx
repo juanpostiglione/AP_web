@@ -38,7 +38,7 @@ export default function StoryPanels() {
           <dl className="company-facts" aria-label="Cifras de la empresa">
             {companyFacts.map((fact) => (
               <div key={fact.label}>
-                <dt>{fact.value}</dt>
+                <dt className={fact.compact ? 'company-fact__value company-fact__value--compact' : 'company-fact__value'}>{fact.value}</dt>
                 <dd>{fact.label}</dd>
               </div>
             ))}

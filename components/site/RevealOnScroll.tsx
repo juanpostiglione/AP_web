@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 // Estas secciones comparten un único observador. Las tarjetas de
 // Representaciones solo se ocultan tras activar JS para mantenerlas visibles
 // si el navegador no ejecuta scripts o prefiere menos movimiento.
-const selectors = '.story--page .story-panel, .project-panel, .service-chapter, .service-work__heading, .service-work__list li, .service-profile__intro, .service-profile__figures, .service-profile__specialties li, .rep-product-card, .product-card, .section-reveal, .representation-card, .home-reveal';
+const selectors = '.story--page .story-panel, .project-group, .service-chapter, .service-work__heading, .service-work__list li, .service-profile__intro, .service-profile__figures, .service-profile__specialties li, .rep-product-card, .product-card, .section-reveal, .representation-card, .home-reveal';
 
 export default function RevealOnScroll() {
   const pathname = usePathname();
